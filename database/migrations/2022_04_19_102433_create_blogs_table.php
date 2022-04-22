@@ -22,6 +22,7 @@ class CreateBlogsTable extends Migration
             $table->enum('status', ['active', 'inactive']);
             $table->timestamps();
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
+            $table->softDeletes();
         });
     }
 

@@ -2,22 +2,27 @@
 
 namespace App\Http\Controllers;
 
-use App\Blog;
 use App\Http\Requests\StoreBlogValidation;
-use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Auth;
+use App\Http\Requests\UpdateBlogValidation;
+use App\Repositories\BlogRepositoryInterface;
 
 class BlogController extends Controller
 {
     /**
+     * @var BlogRepositoryInterface
+     */
+    private $blogRepository;
+
+    /**
      * Create a new controller instance.
      *
-     * @return void
+     * @param BlogRepositoryInterface $blogRepository
      */
-    public function __construct()
+    public function __construct(BlogRepositoryInterface $blogRepository)
     {
         $this->middleware('auth');
         $this->middleware('privilege:normal');
+        $this->blogRepository = $blogRepository;
     }
 
     /**
@@ -27,7 +32,7 @@ class BlogController extends Controller
      */
     public function index()
     {
-        $blogs = Blog::all();
+        $blogs = $this->blogRepository->user_blogs();
         return view('blogs.index')->with('blogs', $blogs);
     }
 
@@ -49,19 +54,7 @@ class BlogController extends Controller
      */
     public function store(StoreBlogValidation $request)
     {
-        $validated = $request->validated();
-
-        $blog = new Blog();
-        $user_id = Auth::id();
-
-        $blog->title = $validated['title'];
-        $blog->short_description = $validated['short_description'];
-        $blog->long_description = $validated['long_description'];
-        $blog->status = $validated['status'];
-        $blog->user_id = $user_id;
-
-        $blog->save();
-
+        $this->blogRepository->store($request);
         return redirect()->route('blogs.index');
     }
 
@@ -73,7 +66,7 @@ class BlogController extends Controller
      */
     public function show($id)
     {
-        $blog = Blog::findOrFail($id);
+        $blog = $this->blogRepository->show($id);
         return view('blogs.show')->with('blog', $blog);
     }
 
@@ -85,30 +78,20 @@ class BlogController extends Controller
      */
     public function edit($id)
     {
-        $blog = Blog::find($id);
+        $blog = $this->blogRepository->edit($id);
         return view('blogs.edit')->with('blog', $blog);
     }
 
     /**
      * Update the specified resource in storage.
      *
-     * @param StoreBlogValidation $request
+     * @param UpdateBlogValidation $request
      * @param  int $id
      * @return \Illuminate\Http\Response
      */
-    public function update(StoreBlogValidation $request, $id)
+    public function update(UpdateBlogValidation $request, $id)
     {
-        $validated = $request->validated();
-
-        $blog = Blog::find($id);
-
-        $blog->title = $validated['title'];
-        $blog->short_description = $validated['short_description'];
-        $blog->long_description = $validated['long_description'];
-        $blog->status = $validated['status'];
-
-        $blog->save();
-
+        $this->blogRepository->update($request, $id);
         return redirect()->route('blogs.index');
     }
 
@@ -120,9 +103,8 @@ class BlogController extends Controller
      */
     public function destroy($id)
     {
-        $blog = Blog::findOrFail($id);
-        $blog->delete();
-
+        $this->blogRepository->destroy($id);
         return redirect()->route('blogs.index');
     }
+
 }

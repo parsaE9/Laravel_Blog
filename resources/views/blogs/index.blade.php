@@ -7,7 +7,8 @@
     <table class="table table-striped table-bordered">
         <thead>
         <tr>
-            <td>ID</td>
+            <td>Date Created</td>
+            <td>Date Edited</td>
             <td>title</td>
             <td>short description</td>
             {{--<td>shark Level</td>--}}
@@ -17,7 +18,8 @@
         <tbody>
         @foreach($blogs as $key => $value)
             <tr>
-                <td>{{ $value->id }}</td>
+                <td>{{ jdate()::fromCarbon($value->created_at)->format('Y/m/d') }}</td>
+                <td>{{ jdate()::fromCarbon($value->updated_at)->format('Y/m/d') }}</td>
                 <td>{{ $value->title }}</td>
                 <td>{{ $value->short_description }}</td>
                 {{--<td>{{ $value->shark_level }}</td>--}}

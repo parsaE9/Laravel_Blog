@@ -3,12 +3,11 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\SoftDeletes;
 
 class Photo extends Model
 {
-    protected $fillable = [
-        'image'
-    ];
+    use SoftDeletes;
 
     // one to many relationship (inverse)
     public function blog()

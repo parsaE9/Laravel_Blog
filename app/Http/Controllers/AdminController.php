@@ -2,20 +2,26 @@
 
 namespace App\Http\Controllers;
 
-use App\Blog;
+use App\Repositories\BlogRepositoryInterface;
 use Illuminate\Http\Request;
 
 class AdminController extends Controller
 {
     /**
+     * @var BlogRepositoryInterface
+     */
+    private $blogRepository;
+
+    /**
      * Create a new controller instance.
      *
-     * @return void
+     * @param BlogRepositoryInterface $blogRepository
      */
-    public function __construct()
+    public function __construct(BlogRepositoryInterface $blogRepository)
     {
         $this->middleware('auth');
         $this->middleware('privilege:admin');
+        $this->blogRepository = $blogRepository;
     }
 
     /**
@@ -25,7 +31,7 @@ class AdminController extends Controller
      */
     public function index()
     {
-        $blogs = Blog::all();
+        $blogs = $this->blogRepository->all_blogs();
         return view('admin')->with('blogs', $blogs);
     }
 }

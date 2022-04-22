@@ -2,7 +2,8 @@
 
 @section('content')
 
-    <h1>Create a shark</h1>
+
+    <h1>Create a Blog</h1>
 
     @if($errors->any())
         <div class="alert alert-danger">
@@ -14,37 +15,44 @@
         </div>
     @endif
 
-    <form method="POST" action="/blogs">
+    <form method="POST" action="/blogs" enctype="multipart/form-data">
         @csrf
 
         <div class="form-group">
             <label>
-                <input name="title" type="text" class="form-control">
+                <input name="title" placeholder="title" type="text" class="form-control">
             </label>
         </div>
 
         <div class="form-group">
             <label>
-                <input name="short_description" type="email" class="form-control">
+                <input name="short_description" placeholder="short description" type="text" class="form-control">
             </label>
         </div>
 
         <div class="form-group">
             <label>
-                <input name="long_description" type="email" class="form-control">
+                <textarea name="long_description" placeholder="long description" cols="90" class="form-control"></textarea>
             </label>
         </div>
 
         <div class="form-group">
             <label>
                 <select class="form-control" name="status">
-                    <option value="active">Volvo</option>
-                    <option value="inactive">Saab</option>
+                    <option value="active">Active</option>
+                    <option value="inactive">Inactive</option>
                 </select>
             </label>
         </div>
 
-        <input type="submit" class="btn btn-primary" value="Create The Shark!">
+        <div class="form-group hdtuto">
+            <label>
+                <input name="images[]" type="file" class="form-control">
+            </label>
+            <button class="btn btn-success" id="add" type="button">Add</button>
+        </div>
+
+        <input type="submit" id="submit" class="btn btn-primary" value="Create The Blog!">
 
     </form>
 

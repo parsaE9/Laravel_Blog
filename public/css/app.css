@@ -10962,3 +10962,8 @@ a.text-dark:focus {
   }
 }
 
+
+.small-image {
+  width: 100px;
+  height: 100px;
+}
