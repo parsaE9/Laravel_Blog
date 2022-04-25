@@ -18,8 +18,8 @@
         <tbody>
         @foreach($blogs as $key => $value)
             <tr>
-                <td>{{ jdate()::fromCarbon($value->created_at)->format('Y/m/d') }}</td>
-                <td>{{ jdate()::fromCarbon($value->updated_at)->format('Y/m/d') }}</td>
+                <td>{{ jdate()::fromCarbon($value->created_at)->format('Y/m/d H:i:s') }}</td>
+                <td>{{ jdate()::fromCarbon($value->updated_at)->format('Y/m/d H:i:s') }}</td>
                 <td>{{ $value->title }}</td>
                 <td>{{ $value->short_description }}</td>
                 {{--<td>{{ $value->shark_level }}</td>--}}
@@ -42,4 +42,5 @@
         @endforeach
         </tbody>
     </table>
+    {{ $blogs->links() }}
 @endsection

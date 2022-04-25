@@ -9,17 +9,18 @@ use App\Photo;
 use App\Http\Requests\StoreBlogValidation;
 use Illuminate\Support\Facades\Auth;
 
+
 class BlogRepository implements BlogRepositoryInterface
 {
     public function all_blogs()
     {
-        return Blog::all();
+        return Blog::paginate(2);
     }
 
 
     public function user_blogs()
     {
-        return Blog::where('user_id', Auth::id())->get();
+        return Blog::where('user_id', Auth::id())->paginate(2);
     }
 
 
@@ -37,9 +38,10 @@ class BlogRepository implements BlogRepositoryInterface
 
         foreach ($request->file('images') as $image) {
             $image_name = $image->getClientOriginalName();
-            $image->storeAs('images', $image_name, 'public');
+            $image_hashed_name = hash('MD5', $image_name) . time();
+            $image->storeAs('images', $image_hashed_name, 'public');
             $photo = new Photo();
-            $photo->path = '/storage/images/' . $image_name;
+            $photo->path = '/storage/images/' . $image_hashed_name;
             $blog->photos()->save($photo);
         }
     }
@@ -53,7 +55,7 @@ class BlogRepository implements BlogRepositoryInterface
 
     public function edit($id)
     {
-        return Blog::find($id);
+        return Blog::findOrFail($id);
     }
 
 
@@ -61,7 +63,7 @@ class BlogRepository implements BlogRepositoryInterface
     {
         $validated = $request->validated();
 
-        $blog = Blog::find($id);
+        $blog = Blog::findOrFail($id);
 
         $blog->title = $validated['title'];
         $blog->short_description = $validated['short_description'];
@@ -81,9 +83,10 @@ class BlogRepository implements BlogRepositoryInterface
         if ($request->hasfile('images')) {
             foreach ($request->file('images') as $image) {
                 $image_name = $image->getClientOriginalName();
-                $image->storeAs('images', $image_name, 'public');
+                $image_hashed_name = hash('MD5', $image_name) . time();
+                $image->storeAs('images', $image_hashed_name, 'public');
                 $photo = new Photo();
-                $photo->path = '/storage/images/' . $image_name;
+                $photo->path = '/storage/images/' . $image_hashed_name;
                 $blog->photos()->save($photo);
             }
         }
@@ -93,6 +96,8 @@ class BlogRepository implements BlogRepositoryInterface
     public function destroy($id)
     {
         $blog = Blog::findOrFail($id);
+        $blog->title = $blog->title . "_deleted_" . $blog->id;
+        $blog->save();
         $blog->photos()->delete();
         $blog->delete();
     }

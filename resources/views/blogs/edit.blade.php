@@ -18,28 +18,34 @@
 
         <div class="form-group">
             <label>
-                <input name="title" type="text" value="{{ $blog->title }}" class="form-control">
+                <input name="title" placeholder="title" type="text" value="{{ $blog->title }}" class="form-control">
             </label>
         </div>
 
         <div class="form-group">
             <label>
-                <input name="short_description" type="text" value="{{ $blog->short_description }}"
-                       class="form-control">
+                <input name="short_description" placeholder="short description" type="text"
+                       value="{{ $blog->short_description }}" class="form-control">
             </label>
         </div>
 
         <div class="form-group">
             <label>
-                <input name="long_description" type="text" value="{{ $blog->long_description }}" class="form-control">
+                <textarea name="long_description" placeholder="long description" cols="90"
+                          class="form-control">{{ $blog->long_description }}</textarea>
             </label>
         </div>
 
         <div class="form-group">
             <label>
                 <select class="form-control" name="status">
-                    <option value="active">Volvo</option>
-                    <option value="inactive">Saab</option>
+                    @if($blog->status == '1')
+                        <option value="1" selected="selected">Active</option>
+                        <option value="2">Inactive</option>
+                    @else
+                        <option value="1">Active</option>
+                        <option value="2" selected="selected">Inactive</option>
+                    @endif
                 </select>
             </label>
         </div>

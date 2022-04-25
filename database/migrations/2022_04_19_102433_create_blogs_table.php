@@ -19,7 +19,7 @@ class CreateBlogsTable extends Migration
             $table->string('title')->unique();
             $table->string('short_description');
             $table->longText('long_description');
-            $table->enum('status', ['active', 'inactive']);
+            $table->enum('status', ['1', '2']);
             $table->timestamps();
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
             $table->softDeletes();

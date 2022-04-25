@@ -44,7 +44,7 @@ class LoginController extends Controller
     public function authenticated(Request $request, $user)
     {
         // if user privilege is admin
-        if ($user->privilege == 'admin') {
+        if ($user->privilege == '2') {
             return redirect()->route('admin_panel');
         }
 

@@ -68,7 +68,7 @@
             @if (Route::has('login'))
                 <div class="top-right links">
                     @auth
-                        @if (Auth::user()->privilege === 'admin')
+                        @if (Auth::user()->privilege === '2')
                             <a href="{{ url('/admin') }}">Admin Panel</a>
                         @else
                             <a href="{{ url('/blogs') }}">Blogs</a>

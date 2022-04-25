@@ -2,7 +2,6 @@
 
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
-use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Str;
 
 class UserSeeder extends Seeder
@@ -18,10 +17,9 @@ class UserSeeder extends Seeder
         // 1 admin user
         DB::table('users')->insert([
             'username' => 'parsa',
-            'privilege' => 'admin',
+            'privilege' => '2',
             'email' => 'parsa@gmail.com',
-            'password' => Hash::make('123456'),
-            'remember_token' => Str::random(10),
+            'password' => bcrypt('123456'),
             'created_at' => now(),
             'updated_at' => now(),
         ]);
@@ -29,20 +27,18 @@ class UserSeeder extends Seeder
         // 2 normal users
         DB::table('users')->insert([
             'username' => 'reza',
-            'privilege' => 'normal',
+            'privilege' => '1',
             'email' => 'reza@gmail.com',
-            'password' => Hash::make('123456'),
-            'remember_token' => Str::random(10),
+            'password' => bcrypt('123456'),
             'created_at' => now(),
             'updated_at' => now(),
         ]);
 
         DB::table('users')->insert([
             'username' => 'ali',
-            'privilege' => 'normal',
+            'privilege' => '1',
             'email' => 'ali@gmail.com',
-            'password' => Hash::make('123456'),
-            'remember_token' => Str::random(10),
+            'password' => bcrypt('123456'),
             'created_at' => now(),
             'updated_at' => now(),
         ]);

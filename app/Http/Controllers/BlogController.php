@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use App\Http\Requests\StoreBlogValidation;
 use App\Http\Requests\UpdateBlogValidation;
 use App\Repositories\BlogRepositoryInterface;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Gate;
 
 class BlogController extends Controller
 {
@@ -21,7 +23,7 @@ class BlogController extends Controller
     public function __construct(BlogRepositoryInterface $blogRepository)
     {
         $this->middleware('auth');
-        $this->middleware('privilege:normal');
+        $this->middleware('privilege:1');
         $this->blogRepository = $blogRepository;
     }
 
@@ -67,6 +69,7 @@ class BlogController extends Controller
     public function show($id)
     {
         $blog = $this->blogRepository->show($id);
+        Gate::authorize('view-update-blog', $blog);
         return view('blogs.show')->with('blog', $blog);
     }
 
@@ -79,6 +82,7 @@ class BlogController extends Controller
     public function edit($id)
     {
         $blog = $this->blogRepository->edit($id);
+        Gate::authorize('view-update-blog', $blog);
         return view('blogs.edit')->with('blog', $blog);
     }
 
