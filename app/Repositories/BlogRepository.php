@@ -6,6 +6,7 @@ namespace App\Repositories;
 use App\Models\Blog;
 use App\Models\Photo;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\File;
 
 
 class BlogRepository implements BlogRepositoryInterface
@@ -67,11 +68,13 @@ class BlogRepository implements BlogRepositoryInterface
         $blog->short_description = $validated['short_description'];
         $blog->long_description = $validated['long_description'];
         $blog->status = $validated['status'];
+        $this->delete_file($blog);
         $blog->photos()->delete();
         $blog->save();
 
         if ($request->has('previous_images')) {
             foreach ($request->get('previous_images') as $image) {
+                dd($image);
                 $photo = new Photo();
                 $photo->path = str_replace("http://127.0.0.1:8000", "", $image);
                 $blog->photos()->save($photo);
@@ -96,7 +99,16 @@ class BlogRepository implements BlogRepositoryInterface
         $blog = Blog::findOrFail($id);
         $blog->title = $blog->title . "_deleted_" . $blog->id;
         $blog->save();
+        $this->delete_file($blog);
         $blog->photos()->delete();
         $blog->delete();
     }
+
+
+    private function delete_file($blog){
+        foreach ($blog->photos as $photo){
+            File::delete(public_path($photo->path));
+        }
+    }
+
 }

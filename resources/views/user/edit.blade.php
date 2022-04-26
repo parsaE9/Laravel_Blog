@@ -49,8 +49,9 @@
                 </select>
             </label>
         </div>
-
+        <p>{{ $blog->photos[0]->path }}</p>
         @foreach($blog->photos as $key => $value)
+
             <div class="form-group hdtuto">
                 <label>
                     <img src="{{asset($value->path)}}" alt="image" class="form-control small-image ">
