@@ -19,8 +19,6 @@ class AdminController extends Controller
      */
     public function __construct(BlogRepositoryInterface $blogRepository)
     {
-        $this->middleware('auth');
-        $this->middleware('privilege:2');
         $this->blogRepository = $blogRepository;
     }
 

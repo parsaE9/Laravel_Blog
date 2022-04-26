@@ -4,9 +4,7 @@ namespace App\Repositories;
 
 
 use App\Blog;
-use App\Http\Requests\UpdateBlogValidation;
 use App\Photo;
-use App\Http\Requests\StoreBlogValidation;
 use Illuminate\Support\Facades\Auth;
 
 
@@ -24,7 +22,7 @@ class BlogRepository implements BlogRepositoryInterface
     }
 
 
-    public function store(StoreBlogValidation $request)
+    public function store($request)
     {
         $validated = $request->validated();
 
@@ -59,7 +57,7 @@ class BlogRepository implements BlogRepositoryInterface
     }
 
 
-    public function update(UpdateBlogValidation $request, $id)
+    public function update($request, $id)
     {
         $validated = $request->validated();
 

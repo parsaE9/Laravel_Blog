@@ -22,8 +22,6 @@ class BlogController extends Controller
      */
     public function __construct(BlogRepositoryInterface $blogRepository)
     {
-        $this->middleware('auth');
-        $this->middleware('privilege:1');
         $this->blogRepository = $blogRepository;
     }
 

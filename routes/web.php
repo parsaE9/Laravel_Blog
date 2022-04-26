@@ -18,6 +18,10 @@ Route::view('/', 'welcome')->name('welcome');
 
 Auth::routes(['register' => false]);
 
-Route::get('/admin', 'AdminController@index')->name('admin_panel');
 
-Route::resource('blogs', 'BlogController');
+Route::middleware('auth')->group(function () {
+
+    Route::get('/admin', 'AdminController@index')->name('admin_panel')->middleware('privilege:2');
+
+    Route::resource('blogs', 'BlogController')->middleware('privilege:1');
+});
