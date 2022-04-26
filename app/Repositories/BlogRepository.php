@@ -3,8 +3,8 @@
 namespace App\Repositories;
 
 
-use App\Blog;
-use App\Photo;
+use App\Models\Blog;
+use App\Models\Photo;
 use Illuminate\Support\Facades\Auth;
 
 

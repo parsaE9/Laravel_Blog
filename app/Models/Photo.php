@@ -1,6 +1,6 @@
 <?php
 
-namespace App;
+namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
@@ -12,6 +12,6 @@ class Photo extends Model
     // one to many relationship (inverse)
     public function blog()
     {
-        return $this->belongsTo('App\Blog');
+        return $this->belongsTo('App\Models\Blog');
     }
 }

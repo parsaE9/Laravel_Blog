@@ -13,46 +13,6 @@
   </component>
   <component name="FavoritesManager">
     <favorites_list name="AsaradProject">
-      <favorite_root url="file://$PROJECT_DIR$/app" module="AsaradProject" type="directory" klass="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode">
-        <favorite_root url="file://$PROJECT_DIR$/app/Http" module="AsaradProject" type="directory" klass="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode">
-          <favorite_root url="file://$PROJECT_DIR$/app/Http/Kernel.php" type="psiFile" klass="com.intellij.ide.projectView.impl.nodes.PsiFileNode" />
-          <favorite_root url="file://$PROJECT_DIR$/app/Http/Middleware" module="AsaradProject" type="directory" klass="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode">
-            <favorite_root url="file://$PROJECT_DIR$/app/Http/Middleware/TrimStrings.php" type="psiFile" klass="com.intellij.ide.projectView.impl.nodes.PsiFileNode" />
-            <favorite_root url="file://$PROJECT_DIR$/app/Http/Middleware/Authenticate.php" type="psiFile" klass="com.intellij.ide.projectView.impl.nodes.PsiFileNode" />
-            <favorite_root url="file://$PROJECT_DIR$/app/Http/Middleware/TrustProxies.php" type="psiFile" klass="com.intellij.ide.projectView.impl.nodes.PsiFileNode" />
-            <favorite_root url="file://$PROJECT_DIR$/app/Http/Middleware/EncryptCookies.php" type="psiFile" klass="com.intellij.ide.projectView.impl.nodes.PsiFileNode" />
-            <favorite_root url="file://$PROJECT_DIR$/app/Http/Middleware/VerifyCsrfToken.php" type="psiFile" klass="com.intellij.ide.projectView.impl.nodes.PsiFileNode" />
-            <favorite_root url="file://$PROJECT_DIR$/app/Http/Middleware/CheckForMaintenanceMode.php" type="psiFile" klass="com.intellij.ide.projectView.impl.nodes.PsiFileNode" />
-            <favorite_root url="file://$PROJECT_DIR$/app/Http/Middleware/RedirectIfAuthenticated.php" type="psiFile" klass="com.intellij.ide.projectView.impl.nodes.PsiFileNode" />
-          </favorite_root>
-          <favorite_root url="file://$PROJECT_DIR$/app/Http/Controllers" module="AsaradProject" type="directory" klass="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode">
-            <favorite_root url="file://$PROJECT_DIR$/app/Http/Controllers/Auth" module="AsaradProject" type="directory" klass="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode">
-              <favorite_root url="file://$PROJECT_DIR$/app/Http/Controllers/Auth/LoginController.php" type="psiFile" klass="com.intellij.ide.projectView.impl.nodes.PsiFileNode" />
-              <favorite_root url="file://$PROJECT_DIR$/app/Http/Controllers/Auth/RegisterController.php" type="psiFile" klass="com.intellij.ide.projectView.impl.nodes.PsiFileNode" />
-              <favorite_root url="file://$PROJECT_DIR$/app/Http/Controllers/Auth/VerificationController.php" type="psiFile" klass="com.intellij.ide.projectView.impl.nodes.PsiFileNode" />
-              <favorite_root url="file://$PROJECT_DIR$/app/Http/Controllers/Auth/ResetPasswordController.php" type="psiFile" klass="com.intellij.ide.projectView.impl.nodes.PsiFileNode" />
-              <favorite_root url="file://$PROJECT_DIR$/app/Http/Controllers/Auth/ForgotPasswordController.php" type="psiFile" klass="com.intellij.ide.projectView.impl.nodes.PsiFileNode" />
-              <favorite_root url="file://$PROJECT_DIR$/app/Http/Controllers/Auth/ConfirmPasswordController.php" type="psiFile" klass="com.intellij.ide.projectView.impl.nodes.PsiFileNode" />
-            </favorite_root>
-            <favorite_root url="file://$PROJECT_DIR$/app/Http/Controllers/Controller.php" type="psiFile" klass="com.intellij.ide.projectView.impl.nodes.PsiFileNode" />
-            <favorite_root url="file://$PROJECT_DIR$/app/Http/Controllers/HomeController.php" type="psiFile" klass="com.intellij.ide.projectView.impl.nodes.PsiFileNode" />
-          </favorite_root>
-        </favorite_root>
-        <favorite_root url="file://$PROJECT_DIR$/app/Console" module="AsaradProject" type="directory" klass="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode">
-          <favorite_root url="file://$PROJECT_DIR$/app/Console/Kernel.php" type="psiFile" klass="com.intellij.ide.projectView.impl.nodes.PsiFileNode" />
-        </favorite_root>
-        <favorite_root url="file://$PROJECT_DIR$/app/User.php" type="psiFile" klass="com.intellij.ide.projectView.impl.nodes.PsiFileNode" />
-        <favorite_root url="file://$PROJECT_DIR$/app/Providers" module="AsaradProject" type="directory" klass="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode">
-          <favorite_root url="file://$PROJECT_DIR$/app/Providers/AppServiceProvider.php" type="psiFile" klass="com.intellij.ide.projectView.impl.nodes.PsiFileNode" />
-          <favorite_root url="file://$PROJECT_DIR$/app/Providers/AuthServiceProvider.php" type="psiFile" klass="com.intellij.ide.projectView.impl.nodes.PsiFileNode" />
-          <favorite_root url="file://$PROJECT_DIR$/app/Providers/EventServiceProvider.php" type="psiFile" klass="com.intellij.ide.projectView.impl.nodes.PsiFileNode" />
-          <favorite_root url="file://$PROJECT_DIR$/app/Providers/RouteServiceProvider.php" type="psiFile" klass="com.intellij.ide.projectView.impl.nodes.PsiFileNode" />
-          <favorite_root url="file://$PROJECT_DIR$/app/Providers/BroadcastServiceProvider.php" type="psiFile" klass="com.intellij.ide.projectView.impl.nodes.PsiFileNode" />
-        </favorite_root>
-        <favorite_root url="file://$PROJECT_DIR$/app/Exceptions" module="AsaradProject" type="directory" klass="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode">
-          <favorite_root url="file://$PROJECT_DIR$/app/Exceptions/Handler.php" type="psiFile" klass="com.intellij.ide.projectView.impl.nodes.PsiFileNode" />
-        </favorite_root>
-      </favorite_root>
       <favorite_root url="file://$PROJECT_DIR$/database" module="AsaradProject" type="directory" klass="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode">
         <favorite_root url="file://$PROJECT_DIR$/database/seeds" module="AsaradProject" type="directory" klass="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode">
           <favorite_root url="file://$PROJECT_DIR$/database/seeds/DatabaseSeeder.php" type="psiFile" klass="com.intellij.ide.projectView.impl.nodes.PsiFileNode" />
@@ -122,40 +82,80 @@
         <favorite_root url="file://$PROJECT_DIR$/public/favicon.ico" type="psiFile" klass="com.intellij.ide.projectView.impl.nodes.PsiFileNode" />
         <favorite_root url="file://$PROJECT_DIR$/public/mix-manifest.json" type="psiFile" klass="com.intellij.ide.projectView.impl.nodes.PsiFileNode" />
       </favorite_root>
+      <favorite_root url="file://$PROJECT_DIR$/app" module="AsaradProject" type="directory" klass="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode">
+        <favorite_root url="file://$PROJECT_DIR$/app/Http" module="AsaradProject" type="directory" klass="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode">
+          <favorite_root url="file://$PROJECT_DIR$/app/Http/Requests" module="AsaradProject" type="directory" klass="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode">
+            <favorite_root url="file://$PROJECT_DIR$/app/Http/Requests/StoreBlogValidation.php" type="psiFile" klass="com.intellij.ide.projectView.impl.nodes.PsiFileNode" />
+            <favorite_root url="file://$PROJECT_DIR$/app/Http/Requests/UpdateBlogValidation.php" type="psiFile" klass="com.intellij.ide.projectView.impl.nodes.PsiFileNode" />
+          </favorite_root>
+          <favorite_root url="file://$PROJECT_DIR$/app/Http/Kernel.php" type="psiFile" klass="com.intellij.ide.projectView.impl.nodes.PsiFileNode" />
+          <favorite_root url="file://$PROJECT_DIR$/app/Http/Middleware" module="AsaradProject" type="directory" klass="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode">
+            <favorite_root url="file://$PROJECT_DIR$/app/Http/Middleware/privilege.php" type="psiFile" klass="com.intellij.ide.projectView.impl.nodes.PsiFileNode" />
+            <favorite_root url="file://$PROJECT_DIR$/app/Http/Middleware/TrimStrings.php" type="psiFile" klass="com.intellij.ide.projectView.impl.nodes.PsiFileNode" />
+            <favorite_root url="file://$PROJECT_DIR$/app/Http/Middleware/Authenticate.php" type="psiFile" klass="com.intellij.ide.projectView.impl.nodes.PsiFileNode" />
+            <favorite_root url="file://$PROJECT_DIR$/app/Http/Middleware/TrustProxies.php" type="psiFile" klass="com.intellij.ide.projectView.impl.nodes.PsiFileNode" />
+            <favorite_root url="file://$PROJECT_DIR$/app/Http/Middleware/EncryptCookies.php" type="psiFile" klass="com.intellij.ide.projectView.impl.nodes.PsiFileNode" />
+            <favorite_root url="file://$PROJECT_DIR$/app/Http/Middleware/VerifyCsrfToken.php" type="psiFile" klass="com.intellij.ide.projectView.impl.nodes.PsiFileNode" />
+            <favorite_root url="file://$PROJECT_DIR$/app/Http/Middleware/CheckForMaintenanceMode.php" type="psiFile" klass="com.intellij.ide.projectView.impl.nodes.PsiFileNode" />
+            <favorite_root url="file://$PROJECT_DIR$/app/Http/Middleware/RedirectIfAuthenticated.php" type="psiFile" klass="com.intellij.ide.projectView.impl.nodes.PsiFileNode" />
+          </favorite_root>
+          <favorite_root url="file://$PROJECT_DIR$/app/Http/Controllers" module="AsaradProject" type="directory" klass="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode">
+            <favorite_root url="file://$PROJECT_DIR$/app/Http/Controllers/Auth" module="AsaradProject" type="directory" klass="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode">
+              <favorite_root url="file://$PROJECT_DIR$/app/Http/Controllers/Auth/LoginController.php" type="psiFile" klass="com.intellij.ide.projectView.impl.nodes.PsiFileNode" />
+              <favorite_root url="file://$PROJECT_DIR$/app/Http/Controllers/Auth/VerificationController.php" type="psiFile" klass="com.intellij.ide.projectView.impl.nodes.PsiFileNode" />
+              <favorite_root url="file://$PROJECT_DIR$/app/Http/Controllers/Auth/ResetPasswordController.php" type="psiFile" klass="com.intellij.ide.projectView.impl.nodes.PsiFileNode" />
+              <favorite_root url="file://$PROJECT_DIR$/app/Http/Controllers/Auth/ForgotPasswordController.php" type="psiFile" klass="com.intellij.ide.projectView.impl.nodes.PsiFileNode" />
+              <favorite_root url="file://$PROJECT_DIR$/app/Http/Controllers/Auth/ConfirmPasswordController.php" type="psiFile" klass="com.intellij.ide.projectView.impl.nodes.PsiFileNode" />
+            </favorite_root>
+            <favorite_root url="file://$PROJECT_DIR$/app/Http/Controllers/Controller.php" type="psiFile" klass="com.intellij.ide.projectView.impl.nodes.PsiFileNode" />
+            <favorite_root url="file://$PROJECT_DIR$/app/Http/Controllers/BlogController.php" type="psiFile" klass="com.intellij.ide.projectView.impl.nodes.PsiFileNode" />
+            <favorite_root url="file://$PROJECT_DIR$/app/Http/Controllers/AdminController.php" type="psiFile" klass="com.intellij.ide.projectView.impl.nodes.PsiFileNode" />
+          </favorite_root>
+        </favorite_root>
+        <favorite_root url="file://$PROJECT_DIR$/app/Models" module="AsaradProject" type="directory" klass="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode">
+          <favorite_root url="file://$PROJECT_DIR$/app/Models/Blog.php" type="psiFile" klass="com.intellij.ide.projectView.impl.nodes.PsiFileNode" />
+          <favorite_root url="file://$PROJECT_DIR$/app/Models/User.php" type="psiFile" klass="com.intellij.ide.projectView.impl.nodes.PsiFileNode" />
+          <favorite_root url="file://$PROJECT_DIR$/app/Models/Photo.php" type="psiFile" klass="com.intellij.ide.projectView.impl.nodes.PsiFileNode" />
+        </favorite_root>
+        <favorite_root url="file://$PROJECT_DIR$/app/Console" module="AsaradProject" type="directory" klass="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode">
+          <favorite_root url="file://$PROJECT_DIR$/app/Console/Kernel.php" type="psiFile" klass="com.intellij.ide.projectView.impl.nodes.PsiFileNode" />
+        </favorite_root>
+        <favorite_root url="file://$PROJECT_DIR$/app/Providers" module="AsaradProject" type="directory" klass="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode">
+          <favorite_root url="file://$PROJECT_DIR$/app/Providers/AppServiceProvider.php" type="psiFile" klass="com.intellij.ide.projectView.impl.nodes.PsiFileNode" />
+          <favorite_root url="file://$PROJECT_DIR$/app/Providers/AuthServiceProvider.php" type="psiFile" klass="com.intellij.ide.projectView.impl.nodes.PsiFileNode" />
+          <favorite_root url="file://$PROJECT_DIR$/app/Providers/EventServiceProvider.php" type="psiFile" klass="com.intellij.ide.projectView.impl.nodes.PsiFileNode" />
+          <favorite_root url="file://$PROJECT_DIR$/app/Providers/RouteServiceProvider.php" type="psiFile" klass="com.intellij.ide.projectView.impl.nodes.PsiFileNode" />
+          <favorite_root url="file://$PROJECT_DIR$/app/Providers/BroadcastServiceProvider.php" type="psiFile" klass="com.intellij.ide.projectView.impl.nodes.PsiFileNode" />
+          <favorite_root url="file://$PROJECT_DIR$/app/Providers/RepositoriesServiceProvider.php" type="psiFile" klass="com.intellij.ide.projectView.impl.nodes.PsiFileNode" />
+        </favorite_root>
+        <favorite_root url="file://$PROJECT_DIR$/app/Exceptions" module="AsaradProject" type="directory" klass="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode">
+          <favorite_root url="file://$PROJECT_DIR$/app/Exceptions/Handler.php" type="psiFile" klass="com.intellij.ide.projectView.impl.nodes.PsiFileNode" />
+        </favorite_root>
+        <favorite_root url="file://$PROJECT_DIR$/app/Repositories" module="AsaradProject" type="directory" klass="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode">
+          <favorite_root url="file://$PROJECT_DIR$/app/Repositories/BlogRepository.php" type="psiFile" klass="com.intellij.ide.projectView.impl.nodes.PsiFileNode" />
+          <favorite_root url="file://$PROJECT_DIR$/app/Repositories/BlogRepositoryInterface.php" type="psiFile" klass="com.intellij.ide.projectView.impl.nodes.PsiFileNode" />
+        </favorite_root>
+      </favorite_root>
     </favorites_list>
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/Http/Controllers/BlogController.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="576">
-              <caret line="24" column="27" selection-start-line="24" selection-start-column="27" selection-end-line="24" selection-end-column="27" />
-              <folding>
-                <element signature="e#40#82#0#PHP" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/Http/Controllers/AdminController.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state>
-              <folding>
-                <element signature="e#40#85#0#PHP" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/routes/web.php">
+        <entry file="file://$PROJECT_DIR$/app/Models/Blog.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="552">
-              <caret line="23" column="4" selection-start-line="23" selection-start-column="4" selection-end-line="23" selection-end-column="4" />
+            <state relative-caret-position="528">
+              <caret line="23" lean-forward="true" selection-start-line="23" selection-end-line="23" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/Models/User.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="580">
+              <caret line="43" lean-forward="true" selection-start-line="43" selection-end-line="43" />
               <folding>
-                <element signature="e#7#43#0#PHP" expanded="true" />
+                <element signature="e#23#69#0#PHP" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -194,10 +194,16 @@
       <find>remember</find>
       <find>img</find>
       <find>find</find>
+      <find>Blog</find>
+      <find>Photo</find>
+      <find>User</find>
     </findStrings>
     <replaceStrings>
       <replace>bcrypt</replace>
     </replaceStrings>
+    <dirStrings>
+      <dir>D:\repo\laravel projects\AsaradProject\app</dir>
+    </dirStrings>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -247,8 +253,14 @@
         <option value="$PROJECT_DIR$/routes/web.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/AdminController.php" />
         <option value="$PROJECT_DIR$/app/Repositories/BlogRepositoryInterface.php" />
-        <option value="$PROJECT_DIR$/app/Repositories/BlogRepository.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/BlogController.php" />
+        <option value="$PROJECT_DIR$/app/Models/Blog.php" />
+        <option value="$PROJECT_DIR$/app/Repositories/BlogRepository.php" />
+        <option value="$PROJECT_DIR$/app/Models/Photo.php" />
+        <option value="$PROJECT_DIR$/app/Models/User.php" />
+        <option value="$PROJECT_DIR$/database/factories/UserFactory.php" />
+        <option value="$PROJECT_DIR$/routes/channels.php" />
+        <option value="$PROJECT_DIR$/config/auth.php" />
       </list>
     </option>
   </component>
@@ -358,10 +370,10 @@
     </include_path>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="-41" />
-    <option name="y" value="108" />
-    <option name="width" value="1945" />
-    <option name="height" value="1058" />
+    <option name="x" value="-42" />
+    <option name="y" value="107" />
+    <option name="width" value="1946" />
+    <option name="height" value="1059" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="1" id="Add" />
@@ -370,7 +382,20 @@
     <navigator proportions="" version="1">
       <foldersAlwaysOnTop value="true" />
     </navigator>
-    <panes />
+    <panes>
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="AsaradProject" type="b2602c69:ProjectViewProjectNode" />
+              <item name="AsaradProject" type="462c0819:PsiDirectoryNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+      <pane id="Scope" />
+    </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
@@ -380,6 +405,9 @@
     <property name="settings.editor.selected.configurable" value="MTConfigurable" />
   </component>
   <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\repo\laravel projects\AsaradProject\app\Models" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="D:\repo\laravel projects\AsaradProject\resources\views\admin" />
       <recent name="D:\repo\laravel projects\AsaradProject\resources\views" />
@@ -427,12 +455,13 @@
       <workItem from="1650884984840" duration="6567000" />
       <workItem from="1650898528930" duration="2609000" />
       <workItem from="1650907592360" duration="886000" />
-      <workItem from="1650963522822" duration="292000" />
+      <workItem from="1650963522822" duration="483000" />
+      <workItem from="1650965759114" duration="1542000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="67899000" />
+    <option name="totallyTimeSpent" value="69632000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -447,12 +476,12 @@
     <frame x="-8" y="-8" width="1691" height="917" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.48288974" weight="0.24923266" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.4816223" weight="0.24923266" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="npm" order="2" side_tool="true" />
-      <window_info active="true" id="Favorites" order="3" sideWeight="0.5171103" side_tool="true" visible="true" weight="0.25230202" />
+      <window_info id="Favorites" order="3" sideWeight="0.5183777" side_tool="true" visible="true" weight="0.24923266" />
       <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Find" order="1" weight="0.32953104" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.48922688" />
       <window_info anchor="bottom" id="Run" order="2" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
@@ -478,12 +507,6 @@
     </ignored-roots>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/storage/app/images/BhJYs9l77TcxjL7VuLbw99i9Lgz7dFu6QXmjNpxP.png" />
-    <entry file="file://$PROJECT_DIR$/storage/app/images/JNqimsKp0o0CgIizSdUzVkSXIRqi7kH3srMHtBp9.png" />
-    <entry file="file://$PROJECT_DIR$/storage/app/images/b8qGSPLAEhB5ffxz9SMkd7xSeQ7doH6Uv4C7pNg8.png" />
-    <entry file="file://$PROJECT_DIR$/public/storage/images/60aerTQdzxrFTq5AKBgpxq8a1aHuUVJ8OXBYTgiH.png">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/vendor/morilog/jalali/src/helpers.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="192">
@@ -558,13 +581,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/layouts/template.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="528">
-          <caret line="22" column="57" selection-start-line="22" selection-start-column="57" selection-end-line="22" selection-end-column="57" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/bootstrap/app.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="288">
@@ -585,33 +601,6 @@
           <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
           <folding>
             <element signature="e#33#69#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/User.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="124">
-          <caret line="24" column="17" lean-forward="true" selection-start-line="24" selection-start-column="17" selection-end-line="24" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Photo.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="10" selection-start-line="10" selection-end-line="10" />
-          <folding>
-            <element signature="e#23#62#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Blog.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="336">
-          <caret line="14" column="5" lean-forward="true" selection-start-line="14" selection-start-column="5" selection-end-line="14" selection-end-column="5" />
-          <folding>
-            <element signature="e#23#62#0#PHP" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -675,13 +664,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/welcome.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="216">
-          <caret line="69" column="25" lean-forward="true" selection-start-line="69" selection-start-column="25" selection-end-line="69" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/Providers/AuthServiceProvider.php">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -705,13 +687,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/blogs/create.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="55">
-          <caret line="30" selection-start-line="30" selection-end-line="30" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/blogs/show.blade.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="432">
@@ -719,13 +694,6 @@
           <folding>
             <element signature="e#486#522#0#HTML" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/blogs/edit.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="262">
-          <caret line="55" column="24" selection-start-line="55" selection-start-column="21" selection-end-line="55" selection-end-column="24" />
         </state>
       </provider>
     </entry>
@@ -756,27 +724,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/blogs/index.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="628">
-          <caret line="44" column="13" selection-start-line="44" selection-start-column="13" selection-end-line="44" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/User/BlogController.php">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/User/BlogController.php" />
     <entry file="file://$PROJECT_DIR$/resources/views/admin.blade.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="288">
           <caret line="12" column="47" selection-start-line="12" selection-start-column="47" selection-end-line="12" selection-end-column="47" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Repositories/BlogRepository.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="168">
-          <caret line="7" column="7" selection-start-line="7" selection-start-column="7" selection-end-line="7" selection-end-column="7" />
         </state>
       </provider>
     </entry>
@@ -808,11 +760,111 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/routes/web.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="552">
-          <caret line="23" column="4" selection-start-line="23" selection-start-column="4" selection-end-line="23" selection-end-column="4" />
+        <state relative-caret-position="408">
+          <caret line="17" lean-forward="true" selection-start-line="17" selection-end-line="17" />
           <folding>
             <element signature="e#7#43#0#PHP" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/blogs/edit.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="508">
+          <caret line="70" column="81" selection-start-line="70" selection-start-column="81" selection-end-line="70" selection-end-column="81" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/blogs/create.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="484">
+          <caret line="53" column="83" selection-start-line="53" selection-start-column="83" selection-end-line="53" selection-end-column="83" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/welcome.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="340">
+          <caret line="94" column="55" selection-start-line="94" selection-start-column="55" selection-end-line="94" selection-end-column="55" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/storage/framework/views/2e3e02fe3dc4836e85061b5e9dcc208dcd74fd4d.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="96">
+          <caret line="4" column="17" selection-start-line="4" selection-start-column="17" selection-end-line="4" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/layouts/template.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="172">
+          <caret line="17" column="65" selection-start-line="17" selection-start-column="65" selection-end-line="17" selection-end-column="65" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/blogs/index.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="388">
+          <caret line="37" column="24" selection-start-line="37" selection-start-column="24" selection-end-line="37" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Repositories/BlogRepository.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="196">
+          <caret line="85" column="29" selection-start-line="85" selection-start-column="29" selection-end-line="85" selection-end-column="29" />
+          <folding>
+            <element signature="e#37#57#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Models/Photo.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="384">
+          <caret line="17" lean-forward="true" selection-start-line="17" selection-end-line="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/database/factories/UserFactory.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="456">
+          <caret line="20" column="12" lean-forward="true" selection-start-line="20" selection-start-column="12" selection-end-line="20" selection-end-column="12" />
+          <folding>
+            <element signature="e#67#87#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/routes/channels.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret lean-forward="true" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/config/auth.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret lean-forward="true" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Models/User.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="580">
+          <caret line="43" lean-forward="true" selection-start-line="43" selection-end-line="43" />
+          <folding>
+            <element signature="e#23#69#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Models/Blog.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="528">
+          <caret line="23" lean-forward="true" selection-start-line="23" selection-end-line="23" />
         </state>
       </provider>
     </entry>

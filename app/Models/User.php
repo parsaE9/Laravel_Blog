@@ -1,6 +1,6 @@
 <?php
 
-namespace App;
+namespace App\Models;
 
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Foundation\Auth\User as Authenticatable;
@@ -37,7 +37,7 @@ class User extends Authenticatable
 
     // one to many relationship
     public function blogs(){
-        return $this->hasMany('App\Blog');
+        return $this->hasMany('App\Models\Blog');
     }
 
 }
