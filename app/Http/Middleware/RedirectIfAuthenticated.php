@@ -18,21 +18,16 @@ class RedirectIfAuthenticated
      */
     public function handle($request, Closure $next, $guard = null)
     {
-//        if (Auth::guard($guard)->check()) {
-//            return redirect(RouteServiceProvider::HOME);
-//        }
-//
-//        return $next($request);
 
         if (Auth::guard($guard)->check()) {
             $privilege = Auth::user()->privilege;
 
             switch ($privilege) {
-                case 'admin':
-                    return redirect('/admin');
+                case '2':
+                    return redirect('/admin_blogs');
                     break;
-                case 'normal':
-                    return redirect('/blogs');
+                case '1':
+                    return redirect('/user_blogs');
                     break;
 
                 default:

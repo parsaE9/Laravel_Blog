@@ -69,9 +69,9 @@
                 <div class="top-right links">
                     @auth
                         @if (Auth::user()->privilege === '2')
-                            <a href="{{ url('/admin') }}">Admin Panel</a>
+                            <a href="{{ url('/admin_blogs') }}">Admin Panel</a>
                         @else
-                            <a href="{{ url('/blogs') }}">Blogs</a>
+                            <a href="{{ url('/user_blogs') }}">User Panel</a>
                         @endif
                     @else
                         <a href="{{ route('login') }}">Login</a>

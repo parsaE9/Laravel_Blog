@@ -14,8 +14,12 @@
     <nav class="navbar navbar-inverse">
 
         <ul class="nav navbar-nav">
-            <li><a href="{{ URL::to('blogs') }}">View All Blogs</a></li>
-            <li><a href="{{ URL::to('blogs/create') }}">Create a Blog</a>
+            @if (Auth::user()->privilege === '1')
+                <li><a href="{{ URL::to('user_blogs') }}">View User Blogs</a></li>
+                <li><a href="{{ URL::to('user_blogs/create') }}">Create a Blog</a>
+            @else
+                <li><a href="{{ URL::to('admin_blogs') }}">View All Blogs</a></li>
+            @endif
         </ul>
 
 

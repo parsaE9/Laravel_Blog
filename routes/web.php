@@ -21,7 +21,10 @@ Auth::routes(['register' => false]);
 
 Route::middleware('auth')->group(function () {
 
-    Route::get('/admin', 'AdminController@index')->name('admin_panel')->middleware('privilege:2');
+    Route::resource('admin_blogs', 'Admin\BlogController')
+        ->only(['index', 'show'])
+        ->middleware('privilege:2');
 
-    Route::resource('blogs', 'BlogController')->middleware('privilege:1');
+    Route::resource('user_blogs', 'User\BlogController')
+        ->middleware('privilege:1');
 });

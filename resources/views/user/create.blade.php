@@ -14,7 +14,7 @@
         </div>
     @endif
 
-    <form method="POST" action="/blogs" enctype="multipart/form-data">
+    <form method="POST" action="/user_blogs" enctype="multipart/form-data">
         @csrf
 
         <div class="form-group">

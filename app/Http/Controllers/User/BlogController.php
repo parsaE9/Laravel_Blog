@@ -1,7 +1,8 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\User;
 
+use App\Http\Controllers\Controller;
 use App\Http\Requests\StoreBlogValidation;
 use App\Http\Requests\UpdateBlogValidation;
 use App\Repositories\BlogRepositoryInterface;
@@ -33,7 +34,7 @@ class BlogController extends Controller
     public function index()
     {
         $blogs = $this->blogRepository->user_blogs();
-        return view('blogs.index')->with('blogs', $blogs);
+        return view('user.index')->with('blogs', $blogs);
     }
 
     /**
@@ -43,7 +44,7 @@ class BlogController extends Controller
      */
     public function create()
     {
-        return view('blogs.create');
+        return view('user.create');
     }
 
     /**
@@ -55,7 +56,7 @@ class BlogController extends Controller
     public function store(StoreBlogValidation $request)
     {
         $this->blogRepository->store($request);
-        return redirect()->route('blogs.index');
+        return redirect()->route('user_blogs.index');
     }
 
     /**
@@ -68,7 +69,7 @@ class BlogController extends Controller
     {
         $blog = $this->blogRepository->show($id);
         Gate::authorize('view-update-blog', $blog);
-        return view('blogs.show')->with('blog', $blog);
+        return view('user.show')->with('blog', $blog);
     }
 
     /**
@@ -81,7 +82,7 @@ class BlogController extends Controller
     {
         $blog = $this->blogRepository->edit($id);
         Gate::authorize('view-update-blog', $blog);
-        return view('blogs.edit')->with('blog', $blog);
+        return view('user.edit')->with('blog', $blog);
     }
 
     /**
@@ -94,7 +95,7 @@ class BlogController extends Controller
     public function update(UpdateBlogValidation $request, $id)
     {
         $this->blogRepository->update($request, $id);
-        return redirect()->route('blogs.index');
+        return redirect()->route('user_blogs.index');
     }
 
     /**
@@ -106,7 +107,7 @@ class BlogController extends Controller
     public function destroy($id)
     {
         $this->blogRepository->destroy($id);
-        return redirect()->route('blogs.index');
+        return redirect()->route('user_blogs.index');
     }
 
 }

@@ -24,7 +24,7 @@ class UpdateBlogValidation extends FormRequest
      */
     public function rules()
     {
-        $id = $this->route('blog');
+        $id = $this->route('user_blog');
         return [
             'title' => 'required|unique:blogs,title, ' . $id,
             'short_description' => 'required',
