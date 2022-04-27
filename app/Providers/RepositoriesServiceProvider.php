@@ -2,8 +2,10 @@
 
 namespace App\Providers;
 
-use App\Repositories\BlogRepository;
+use App\Repositories\Eloquent\BlogRepository;
+use App\Repositories\Eloquent\PhotoRepository;
 use App\Repositories\BlogRepositoryInterface;
+use App\Repositories\PhotoRepositoryInterface;
 use Illuminate\Support\ServiceProvider;
 
 class RepositoriesServiceProvider extends ServiceProvider
@@ -26,5 +28,6 @@ class RepositoriesServiceProvider extends ServiceProvider
     public function boot()
     {
         $this->app->bind(BlogRepositoryInterface::class, BlogRepository::class);
+        $this->app->bind(PhotoRepositoryInterface::class, PhotoRepository::class);
     }
 }

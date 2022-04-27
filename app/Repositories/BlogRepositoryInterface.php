@@ -5,15 +5,13 @@ namespace App\Repositories;
 
 interface BlogRepositoryInterface
 {
-    public function all_blogs();
+    public function all();
 
     public function user_blogs();
 
-    public function store($request);
+    public function find($id);
 
-    public function show($id);
-
-    public function edit($id);
+    public function save($request);
 
     public function update($request, $id);
 

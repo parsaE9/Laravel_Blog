@@ -10,11 +10,6 @@ class Photo extends Model
     use SoftDeletes;
 
 
-    protected $fillable = [
-        'username', 'email', 'password',
-    ];
-
-
     // one to many relationship (inverse)
     public function blog()
     {
