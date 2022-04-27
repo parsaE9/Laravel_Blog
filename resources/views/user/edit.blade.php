@@ -2,6 +2,8 @@
 
 @section('content')
 
+    <h1>Edit a Blog</h1>
+
     @if($errors->any())
         <div class="alert alert-danger">
             <ul>
@@ -49,7 +51,8 @@
                 </select>
             </label>
         </div>
-        <p>{{ $blog->photos[0]->path }}</p>
+
+
         @foreach($blog->photos as $key => $value)
 
             <div class="form-group hdtuto">
