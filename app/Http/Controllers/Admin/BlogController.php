@@ -26,14 +26,14 @@ class BlogController extends Controller
 
     public function index()
     {
-        $blogs = $this->blogRepository->all_blogs();
+        $blogs = $this->blogRepository->all();
         return view('admin.index')->with('blogs', $blogs);
     }
 
 
     public function show($id)
     {
-        $blog = $this->blogRepository->show($id);
+        $blog = $this->blogRepository->find($id);
         return view('admin.show')->with('blog', $blog);
     }
 

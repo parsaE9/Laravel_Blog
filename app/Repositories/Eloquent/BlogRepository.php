@@ -70,15 +70,15 @@ class BlogRepository implements BlogRepositoryInterface
         $blog = Blog::findOrFail($id);
         $blog->title = $blog->title . "_deleted_" . $blog->id;
         $blog->save();
-        $this->delete_file($blog);
+//        $this->delete_file($blog);
         $blog->delete();
     }
 
 
-    private function delete_file($blog){
-        foreach ($blog->photos as $photo){
-            File::delete(public_path($photo->path));
-        }
-    }
+//    private function delete_file($blog){
+//        foreach ($blog->photos as $photo){
+//            File::delete(public_path($photo->path));
+//        }
+//    }
 
 }
