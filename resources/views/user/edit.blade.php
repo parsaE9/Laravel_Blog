@@ -61,7 +61,7 @@
                 </label>
                 <button class="btn btn-danger float-right" id="remove" type="button">Remove</button>
                 <label>
-                    <input name="previous_images[]" type="checkbox" value="{{asset($value->path)}}" checked hidden>
+                    <input name="previous_images[]" type="checkbox" value="{{$value->path}}" checked hidden>
                 </label>
             </div>
         @endforeach

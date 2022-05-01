@@ -6,7 +6,6 @@ namespace App\Repositories\Eloquent;
 use App\Models\Blog;
 use App\Repositories\BlogRepositoryInterface;
 use Illuminate\Support\Facades\Auth;
-use Illuminate\Support\Facades\File;
 
 
 class BlogRepository implements BlogRepositoryInterface
@@ -55,10 +54,6 @@ class BlogRepository implements BlogRepositoryInterface
         $blog->short_description = $validated['short_description'];
         $blog->long_description = $validated['long_description'];
         $blog->status = $validated['status'];
-
-        # TODO delete photo file when editing
-//        $this->delete_file($blog);
-        $blog->photos()->delete();
         $blog->save();
 
         return $blog;
@@ -70,15 +65,7 @@ class BlogRepository implements BlogRepositoryInterface
         $blog = Blog::findOrFail($id);
         $blog->title = $blog->title . "_deleted_" . $blog->id;
         $blog->save();
-//        $this->delete_file($blog);
         $blog->delete();
     }
-
-
-//    private function delete_file($blog){
-//        foreach ($blog->photos as $photo){
-//            File::delete(public_path($photo->path));
-//        }
-//    }
 
 }

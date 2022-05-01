@@ -5,6 +5,7 @@ namespace App\Repositories\Eloquent;
 
 use App\Models\Photo;
 use App\Repositories\PhotoRepositoryInterface;
+use Illuminate\Support\Facades\File;
 
 
 class PhotoRepository implements PhotoRepositoryInterface
@@ -25,10 +26,16 @@ class PhotoRepository implements PhotoRepositoryInterface
     public function update($request, $blog)
     {
         if ($request->has('previous_images')) {
-            foreach ($request->get('previous_images') as $image) {
-                $photo = new Photo();
-                $photo->path = str_replace("http://127.0.0.1:8000", "", $image);
-                $photo->blog()->associate($blog)->save();
+            foreach ($blog->photos as $key => $value) {
+                if (!in_array($value->path, $request->get('previous_images'))) {
+                    File::delete(public_path($value->path));
+                    Photo::where('path', $value->path)->delete();
+                }
+            }
+        } else {
+            foreach ($blog->photos as $key => $value) {
+                File::delete(public_path($value->path));
+                Photo::where('path', $value->path)->delete();
             }
         }
 
@@ -47,6 +54,11 @@ class PhotoRepository implements PhotoRepositoryInterface
 
     public function destroy($id)
     {
-        Photo::where('blog_id', $id)->delete();
+        $photos = Photo::where('blog_id', $id)->get();
+        foreach ($photos as $photo) {
+            File::delete(public_path($photo->path));
+            $photo->delete();
+        }
     }
+
 }
