@@ -22,7 +22,7 @@ Auth::routes(['register' => false]);
 Route::middleware('auth')->group(function () {
 
     Route::resource('admin_blogs', 'Admin\BlogController')
-        ->only(['index', 'show'])
+        ->except(['create', 'store'])
         ->middleware('privilege:2');
 
     Route::resource('user_blogs', 'User\BlogController')

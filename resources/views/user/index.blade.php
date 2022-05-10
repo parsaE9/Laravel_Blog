@@ -29,11 +29,8 @@
                         <button class="btn btn-warning ">Delete Blog</button>
                     </form>
 
-                    <a class="btn btn-small btn-success" href="{{ URL::to('user_blogs/' . $value->id) }}">Show this
-                        Blog</a>
-
-                    <a class="btn btn-small btn-info" href="{{ URL::to('user_blogs/' . $value->id . '/edit') }}">Edit this
-                        Blog</a>
+                    <a class="btn btn-small btn-success" href="{{ URL::to('user_blogs/' . $value->id) }}">Show this Blog</a>
+                    <a class="btn btn-small btn-info" href="{{ URL::to('user_blogs/' . $value->id . '/edit') }}">Edit this Blog</a>
 
                 </td>
             </tr>
