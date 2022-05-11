@@ -29,5 +29,10 @@ Route::middleware('auth')->group(function () {
         ->middleware('privilege:2');
 
     Route::resource('users', 'Admin\UserController')
+        ->except(['show'])
+        ->middleware('privilege:2');
+
+    Route::resource('admins', 'Admin\AdminController')
+        ->except(['show'])
         ->middleware('privilege:2');
 });

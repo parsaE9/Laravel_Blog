@@ -8,7 +8,6 @@ use App\Http\Requests\UpdateUserValidation;
 use App\Repositories\BlogRepositoryInterface;
 use App\Repositories\PhotoRepositoryInterface;
 use App\Repositories\UserRepositoryInterface;
-use Illuminate\Http\Request;
 
 
 class UserController extends Controller
@@ -28,7 +27,7 @@ class UserController extends Controller
 
     public function index()
     {
-        $users =$this->userRepository->all();
+        $users = $this->userRepository->all();
         return view('admin.users.index')->with('users', $users);
     }
 
@@ -43,13 +42,6 @@ class UserController extends Controller
     {
         $this->userRepository->save($request);
         return redirect()->route('users.index');
-    }
-
-
-    public function show($id)
-    {
-        $user = $this->userRepository->find($id);
-        return view('admin.users.show')->with('user', $user);
     }
 
 

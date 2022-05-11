@@ -2,16 +2,16 @@
 
 namespace App\Repositories\Eloquent;
 
-
 use App\Models\User;
 use App\Repositories\UserRepositoryInterface;
+
 
 class UserRepository implements UserRepositoryInterface
 {
 
     public function all()
     {
-        return User::paginate(4);
+        return User::where('privilege', '1')->paginate(4);
     }
 
     public function find($id)
@@ -39,7 +39,7 @@ class UserRepository implements UserRepositoryInterface
         $user = User::findOrFail($id);
         $user->username = $validated['username'];
         $user->email = $validated['email'];
-        if ($validated['password'] != $user->password){
+        if ($validated['password'] != $user->password) {
             $user->password = bcrypt($validated['password']);
         }
         $user->save();

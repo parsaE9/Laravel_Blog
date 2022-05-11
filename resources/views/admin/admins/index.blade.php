@@ -2,7 +2,7 @@
 
 @section('content')
 
-    <h1>Users</h1>
+    <h1>Admins</h1>
 
     <table class="table table-striped table-bordered">
         <thead>
@@ -15,7 +15,7 @@
         </tr>
         </thead>
         <tbody>
-        @foreach($users as $key => $value)
+        @foreach($admins as $key => $value)
             <tr>
                 <td>{{ jdate()::fromCarbon($value->created_at)->format('Y/m/d H:i:s') }}</td>
                 <td>{{ jdate()::fromCarbon($value->updated_at)->format('Y/m/d H:i:s') }}</td>
@@ -26,15 +26,15 @@
                     <form action="{{ route('users.destroy', $value->id) }}" method="POST" class="pull-right">
                         <input type="hidden" name="_method" value="DELETE">
                         <input type="hidden" name="_token" value="{{ csrf_token() }}">
-                        <button class="btn btn-warning ">Delete User</button>
+                        <button class="btn btn-warning ">Delete Admin</button>
                     </form>
 
-                    <a class="btn btn-small btn-info" href="{{ URL::to('users/' . $value->id . '/edit') }}">Edit this User</a>
+                    <a class="btn btn-small btn-info" href="{{ URL::to('users/' . $value->id . '/edit') }}">Edit this Admin</a>
 
                 </td>
             </tr>
         @endforeach
         </tbody>
     </table>
-    {{ $users->links() }}
+    {{ $admins->links() }}
 @endsection

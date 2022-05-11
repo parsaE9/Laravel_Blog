@@ -2,6 +2,8 @@
 
 namespace App\Providers;
 
+use App\Repositories\AdminRepositoryInterface;
+use App\Repositories\Eloquent\AdminRepository;
 use App\Repositories\Eloquent\BlogRepository;
 use App\Repositories\Eloquent\PhotoRepository;
 use App\Repositories\BlogRepositoryInterface;
@@ -32,5 +34,6 @@ class RepositoriesServiceProvider extends ServiceProvider
         $this->app->bind(BlogRepositoryInterface::class, BlogRepository::class);
         $this->app->bind(PhotoRepositoryInterface::class, PhotoRepository::class);
         $this->app->bind(UserRepositoryInterface::class, UserRepository::class);
+        $this->app->bind(AdminRepositoryInterface::class, AdminRepository::class);
     }
 }

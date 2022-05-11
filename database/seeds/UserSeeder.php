@@ -14,18 +14,6 @@ class UserSeeder extends Seeder
     public function run()
     {
 
-        // 1 admin user
-        DB::table('users')->updateOrInsert(
-            ['username' => 'parsa', 'email' => 'parsa@gmail.com'],
-            [
-                'username' => 'parsa',
-                'privilege' => '2',
-                'email' => 'parsa@gmail.com',
-                'password' => bcrypt('123456'),
-                'created_at' => now(),
-                'updated_at' => now(),
-            ]);
-
         // 2 normal users
         DB::table('users')->updateOrInsert(
             ['username' => 'reza', 'email' => 'reza@gmail.com'],
@@ -45,6 +33,40 @@ class UserSeeder extends Seeder
                 'privilege' => '1',
                 'email' => 'ali@gmail.com',
                 'password' => bcrypt('123456'),
+                'created_at' => now(),
+                'updated_at' => now(),
+            ]);
+
+
+        // 1 admin user
+        DB::table('users')->updateOrInsert(
+            ['username' => 'parsa', 'email' => 'parsa@gmail.com'],
+            [
+                'username' => 'parsa',
+                'privilege' => '2',
+                'email' => 'parsa@gmail.com',
+                'password' => bcrypt('123456'),
+                'created_at' => now(),
+                'updated_at' => now(),
+            ]);
+
+        DB::table('privileges')->updateOrInsert(
+            ['user_id' => '3'],
+            [
+                'user_list' => true,
+                'user_create' => true,
+                'user_edit' => true,
+                'user_delete' => true,
+
+                'admin_list' => true,
+                'admin_create' => true,
+                'admin_edit' => true,
+                'admin_delete' => true,
+
+                'blog_list' => true,
+                'blog_edit' => true,
+                'blog_delete' => true,
+
                 'created_at' => now(),
                 'updated_at' => now(),
             ]);

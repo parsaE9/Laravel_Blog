@@ -37,9 +37,13 @@ class User extends Authenticatable
      */
     protected $casts = [];
 
-    // one to many relationship
+
     public function blogs(){
         return $this->hasMany('App\Models\Blog');
+    }
+
+    public function privilege(){
+        return $this->hasOne('App\Models\Privilege');
     }
 
 }
