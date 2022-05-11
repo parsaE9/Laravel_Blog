@@ -24,6 +24,8 @@
                 <li><a href="{{ URL::to('user_blogs/create') }}">Create a Blog</a>
             @else
                 <li><a href="{{ URL::to('admin_blogs') }}">View All Blogs</a></li>
+                <li><a href="{{ URL::to('users') }}">View All Users</a></li>
+                <li><a href="{{ URL::to('users/create') }}">Create new User</a></li>
             @endif
         </ul>
 

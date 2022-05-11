@@ -21,10 +21,13 @@ Auth::routes(['register' => false]);
 
 Route::middleware('auth')->group(function () {
 
+    Route::resource('user_blogs', 'User\BlogController')
+        ->middleware('privilege:1');
+
     Route::resource('admin_blogs', 'Admin\BlogController')
         ->except(['create', 'store'])
         ->middleware('privilege:2');
 
-    Route::resource('user_blogs', 'User\BlogController')
-        ->middleware('privilege:1');
+    Route::resource('users', 'Admin\UserController')
+        ->middleware('privilege:2');
 });
