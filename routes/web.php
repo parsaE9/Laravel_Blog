@@ -25,7 +25,7 @@ Route::middleware('auth')->group(function () {
         ->middleware('privilege:1');
 
     Route::resource('admin_blogs', 'Admin\BlogController')
-        ->except(['create', 'store'])
+        ->except(['show', 'create', 'store'])
         ->middleware('privilege:2');
 
     Route::resource('users', 'Admin\UserController')
@@ -35,4 +35,10 @@ Route::middleware('auth')->group(function () {
     Route::resource('admins', 'Admin\AdminController')
         ->except(['show'])
         ->middleware('privilege:2');
+
+
+    Route::view('/admin_panel', 'admin.panel')
+        ->name('admin_panel')
+        ->middleware('privilege:2');
+
 });

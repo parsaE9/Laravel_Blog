@@ -35,15 +35,6 @@
             </label>
         </div>
 
-        {{--<div class="form-group">--}}
-            {{--<label>--}}
-                {{--<select class="form-control" name="status">--}}
-                    {{--<option value="1">Active</option>--}}
-                    {{--<option value="2">Inactive</option>--}}
-                {{--</select>--}}
-            {{--</label>--}}
-        {{--</div>--}}
-
         <input type="submit" id="submit" class="btn btn-primary" value="Create The User!">
 
     </form>

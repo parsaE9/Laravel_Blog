@@ -39,9 +39,11 @@ class UserRepository implements UserRepositoryInterface
         $user = User::findOrFail($id);
         $user->username = $validated['username'];
         $user->email = $validated['email'];
+
         if ($validated['password'] != $user->password) {
             $user->password = bcrypt($validated['password']);
         }
+
         $user->save();
     }
 

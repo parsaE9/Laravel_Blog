@@ -24,10 +24,6 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-
-        Gate::define('view-update-blog', function ($user, $blog) {
-            return $user->id === $blog->user_id;
-        });
-
+        //
     }
 }

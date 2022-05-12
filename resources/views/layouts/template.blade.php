@@ -23,11 +23,21 @@
                 <li><a href="{{ URL::to('user_blogs') }}">View User Blogs</a></li>
                 <li><a href="{{ URL::to('user_blogs/create') }}">Create a Blog</a>
             @else
-                <li><a href="{{ URL::to('admin_blogs') }}">View All Blogs</a></li>
-                <li><a href="{{ URL::to('users') }}">View All Users</a></li>
-                <li><a href="{{ URL::to('users/create') }}">Create New User</a></li>
-                <li><a href="{{ URL::to('admins') }}">View All Admins</a></li>
-                <li><a href="{{ URL::to('admins/create') }}">Create New Admin</a></li>
+                @if (Auth::user()->privileges->blog_list)
+                    <li><a href="{{ URL::to('admin_blogs') }}">View All Blogs</a></li>
+                @endif
+                @if (Auth::user()->privileges->user_list)
+                    <li><a href="{{ URL::to('users') }}">View All Users</a></li>
+                @endif
+                @if (Auth::user()->privileges->user_create)
+                    <li><a href="{{ URL::to('users/create') }}">Create New User</a></li>
+                @endif
+                @if (Auth::user()->privileges->admin_list)
+                    <li><a href="{{ URL::to('admins') }}">View All Admins</a></li>
+                @endif
+                @if (Auth::user()->privileges->admin_create)
+                    <li><a href="{{ URL::to('admins/create') }}">Create New Admin</a></li>
+                @endif
             @endif
         </ul>
 

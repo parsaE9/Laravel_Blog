@@ -3,7 +3,7 @@
 namespace App\Http\Controllers\User;
 
 use App\Http\Controllers\Controller;
-use App\Http\Requests\StoreBlogValidation;
+use App\Http\Requests\CreateBlogValidation;
 use App\Http\Requests\UpdateBlogValidation;
 use App\Repositories\BlogRepositoryInterface;
 use App\Repositories\PhotoRepositoryInterface;
@@ -36,7 +36,7 @@ class BlogController extends Controller
     }
 
 
-    public function store(StoreBlogValidation $request)
+    public function store(CreateBlogValidation $request)
     {
         $blog = $this->blogRepository->save($request);
         $this->photoRepository->save($request, $blog);
@@ -47,7 +47,7 @@ class BlogController extends Controller
     public function show($id)
     {
         $blog = $this->blogRepository->find($id);
-        Gate::authorize('view-update-blog', $blog);
+        Gate::authorize('user-view-update-blog', $blog);
         return view('user.show')->with('blog', $blog);
     }
 
@@ -55,7 +55,7 @@ class BlogController extends Controller
     public function edit($id)
     {
         $blog = $this->blogRepository->find($id);
-        Gate::authorize('view-update-blog', $blog);
+        Gate::authorize('user-view-update-blog', $blog);
         return view('user.edit')->with('blog', $blog);
     }
 

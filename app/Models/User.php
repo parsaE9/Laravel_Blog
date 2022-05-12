@@ -42,7 +42,7 @@ class User extends Authenticatable
         return $this->hasMany('App\Models\Blog');
     }
 
-    public function privilege(){
+    public function privileges(){
         return $this->hasOne('App\Models\Privilege');
     }
 

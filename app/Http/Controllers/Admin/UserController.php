@@ -27,6 +27,7 @@ class UserController extends Controller
 
     public function index()
     {
+        $this->authorize('admin-viewAll-users');
         $users = $this->userRepository->all();
         return view('admin.users.index')->with('users', $users);
     }
@@ -34,6 +35,7 @@ class UserController extends Controller
 
     public function create()
     {
+        $this->authorize('admin-create-user');
         return view('admin.users.create');
     }
 
@@ -47,6 +49,7 @@ class UserController extends Controller
 
     public function edit($id)
     {
+        $this->authorize('admin-edit-user');
         $user = $this->userRepository->find($id);
         return view('admin.users.edit')->with('user', $user);
     }
@@ -61,6 +64,8 @@ class UserController extends Controller
 
     public function destroy($id)
     {
+        $this->authorize('admin-delete-user');
+
         $user_blogs_IDs = $this->userRepository->destroy($id);
 
         foreach ($user_blogs_IDs as $user_blog_ID){

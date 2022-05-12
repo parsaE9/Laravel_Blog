@@ -24,7 +24,7 @@ class RedirectIfAuthenticated
 
             switch ($privilege) {
                 case '2':
-                    return redirect('/admin_blogs');
+                    return redirect('/admin_panel');
                     break;
                 case '1':
                     return redirect('/user_blogs');

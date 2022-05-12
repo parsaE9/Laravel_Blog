@@ -38,21 +38,6 @@
             </label>
         </div>
 
-
-        {{--<div class="form-group">--}}
-            {{--<label>--}}
-                {{--<select class="form-control" name="status">--}}
-                    {{--@if($blog->status == '1')--}}
-                        {{--<option value="1" selected="selected">Active</option>--}}
-                        {{--<option value="2">Inactive</option>--}}
-                    {{--@else--}}
-                        {{--<option value="1">Active</option>--}}
-                        {{--<option value="2" selected="selected">Inactive</option>--}}
-                    {{--@endif--}}
-                {{--</select>--}}
-            {{--</label>--}}
-        {{--</div>--}}
-
         <input type="submit" id="submit" class="btn btn-primary" value="Edit The User!">
     </form>
 

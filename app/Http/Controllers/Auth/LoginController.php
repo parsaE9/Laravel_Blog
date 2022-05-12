@@ -45,7 +45,7 @@ class LoginController extends Controller
     {
         // if user privilege is admin
         if ($user->privilege == '2') {
-            return redirect()->route('admin_blogs.index');
+            return redirect()->route('admin_panel');
         }
 
         // otherwise user privilege is normal

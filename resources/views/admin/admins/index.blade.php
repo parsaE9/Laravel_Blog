@@ -23,13 +23,18 @@
                 <td>{{ $value->email }}</td>
 
                 <td>
-                    <form action="{{ route('users.destroy', $value->id) }}" method="POST" class="pull-right">
-                        <input type="hidden" name="_method" value="DELETE">
-                        <input type="hidden" name="_token" value="{{ csrf_token() }}">
-                        <button class="btn btn-warning ">Delete Admin</button>
-                    </form>
+                    @if (Auth::user()->privileges->admin_delete)
+                        <form action="{{ route('admins.destroy', $value->id) }}" method="POST" class="pull-right">
+                            <input type="hidden" name="_method" value="DELETE">
+                            <input type="hidden" name="_token" value="{{ csrf_token() }}">
+                            <button class="btn btn-warning ">Delete Admin</button>
+                        </form>
+                    @endif
 
-                    <a class="btn btn-small btn-info" href="{{ URL::to('users/' . $value->id . '/edit') }}">Edit this Admin</a>
+                    @if (Auth::user()->privileges->admin_edit)
+                        <a class="btn btn-small btn-info" href="{{ URL::to('admins/' . $value->id . '/edit') }}">Edit
+                            this Admin</a>
+                    @endif
 
                 </td>
             </tr>
