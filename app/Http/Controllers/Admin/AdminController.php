@@ -6,17 +6,19 @@ use App\Http\Controllers\Controller;
 use App\Http\Requests\CreateAdminValidation;
 use App\Http\Requests\UpdateAdminValidation;
 use App\Repositories\AdminRepositoryInterface;
-use Illuminate\Http\Request;
+use App\Repositories\PrivilegeRepositoryInterface;
 
 
 class AdminController extends Controller
 {
 
     private $adminRepository;
+    private $privilegeRepository;
 
-    public function __construct(AdminRepositoryInterface $adminRepository)
+    public function __construct(AdminRepositoryInterface $adminRepository, PrivilegeRepositoryInterface $privilegeRepository)
     {
         $this->adminRepository = $adminRepository;
+        $this->privilegeRepository = $privilegeRepository;
     }
 
 
@@ -37,7 +39,8 @@ class AdminController extends Controller
 
     public function store(CreateAdminValidation $request)
     {
-        $this->adminRepository->save($request);
+        $admin = $this->adminRepository->save($request);
+        $this->privilegeRepository->save($request, $admin);
         return redirect()->route('admins.index');
     }
 
@@ -52,7 +55,8 @@ class AdminController extends Controller
 
     public function update(UpdateAdminValidation $request, $id)
     {
-        $this->adminRepository->update($request, $id);
+        $admin = $this->adminRepository->update($request, $id);
+        $this->privilegeRepository->update($request, $admin);
         return redirect()->route('admins.index');
     }
 
@@ -61,6 +65,7 @@ class AdminController extends Controller
     {
         $this->authorize('admin-delete-admin');
         $this->adminRepository->destroy($id);
+        $this->privilegeRepository->destroy($id);
         return redirect()->route('admins.index');
     }
 }
