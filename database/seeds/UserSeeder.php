@@ -49,27 +49,5 @@ class UserSeeder extends Seeder
                 'created_at' => now(),
                 'updated_at' => now(),
             ]);
-
-        DB::table('privileges')->updateOrInsert(
-            ['user_id' => '3'],
-            [
-                'user_list' => true,
-                'user_create' => true,
-                'user_edit' => true,
-                'user_delete' => true,
-
-                'admin_list' => true,
-                'admin_create' => true,
-                'admin_edit' => true,
-                'admin_delete' => true,
-
-                'blog_list' => true,
-                'blog_edit' => true,
-                'blog_delete' => true,
-
-                'created_at' => now(),
-                'updated_at' => now(),
-            ]);
-
     }
 }

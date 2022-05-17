@@ -3,13 +3,11 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
-use Illuminate\Database\Eloquent\SoftDeletes;
+
 
 class Privilege extends Model
 {
-    use SoftDeletes;
-
-    public function user(){
-        return $this->belongsTo('App\Models\User');
+    public function users(){
+        return $this->belongsToMany('App\Models\User');
     }
 }

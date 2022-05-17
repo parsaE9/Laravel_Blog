@@ -23,7 +23,7 @@
                 <td>{{ $value->email }}</td>
 
                 <td>
-                    @if (Auth::user()->privileges->user_delete)
+                    @if (authorize_action('user_delete'))
                         <form action="{{ route('users.destroy', $value->id) }}" method="POST" class="pull-right">
                             <input type="hidden" name="_method" value="DELETE">
                             <input type="hidden" name="_token" value="{{ csrf_token() }}">
@@ -31,7 +31,7 @@
                         </form>
                     @endif
 
-                    @if (Auth::user()->privileges->user_edit)
+                    @if (authorize_action('user_edit'))
                         <a class="btn btn-small btn-info" href="{{ URL::to('users/' . $value->id . '/edit') }}">Edit
                             this
                             User</a>

@@ -6,8 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Http\Requests\UpdateBlogValidation;
 use App\Repositories\BlogRepositoryInterface;
 use App\Repositories\PhotoRepositoryInterface;
-use Illuminate\Auth\Access\AuthorizationException;
-use Illuminate\Http\Request;
+
 
 class BlogController extends Controller
 {
@@ -15,12 +14,7 @@ class BlogController extends Controller
     private $blogRepository;
     private $photoRepository;
 
-    /**
-     * Create a new controller instance.
-     *
-     * @param BlogRepositoryInterface $blogRepository
-     * @param PhotoRepositoryInterface $photoRepository
-     */
+
     public function __construct(BlogRepositoryInterface $blogRepository, PhotoRepositoryInterface $photoRepository)
     {
         $this->blogRepository = $blogRepository;
@@ -30,7 +24,7 @@ class BlogController extends Controller
 
     public function index()
     {
-        $this->authorize('admin-viewAll-blogs');
+        authorize_action('blog_list', true);
         $blogs = $this->blogRepository->all();
         return view('admin.blogs.index')->with('blogs', $blogs);
     }
@@ -38,7 +32,7 @@ class BlogController extends Controller
 
     public function edit($id)
     {
-        $this->authorize('admin-edit-blog');
+        authorize_action('blog_edit', true);
         $blog = $this->blogRepository->find($id);
         return view('admin.blogs.edit')->with('blog', $blog);
     }
@@ -54,7 +48,7 @@ class BlogController extends Controller
 
     public function destroy($id)
     {
-        $this->authorize('admin-delete-blog');
+        authorize_action('blog_delete', true);
         $this->photoRepository->destroy($id);
         $this->blogRepository->destroy($id);
         return redirect()->route('admin_blogs.index');

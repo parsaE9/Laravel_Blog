@@ -24,7 +24,7 @@ class AdminController extends Controller
 
     public function index()
     {
-        $this->authorize('admin-viewAll-admins');
+        authorize_action('admin_list', true);
         $admins = $this->adminRepository->all();
         return view('admin.admins.index')->with('admins', $admins);
     }
@@ -32,22 +32,22 @@ class AdminController extends Controller
 
     public function create()
     {
-        $this->authorize('admin-create-admin');
+        authorize_action('admin_create', true);
         return view('admin.admins.create');
     }
 
 
     public function store(CreateAdminValidation $request)
     {
-        $admin = $this->adminRepository->save($request);
-        $this->privilegeRepository->save($request, $admin);
+        $admin_id = $this->adminRepository->save($request);
+        $this->privilegeRepository->save($request, $admin_id);
         return redirect()->route('admins.index');
     }
 
 
     public function edit($id)
     {
-        $this->authorize('admin-edit-admin');
+        authorize_action('admin_edit', true);
         $admin = $this->adminRepository->find($id);
         return view('admin.admins.edit')->with('admin', $admin);
     }
@@ -55,17 +55,17 @@ class AdminController extends Controller
 
     public function update(UpdateAdminValidation $request, $id)
     {
-        $admin = $this->adminRepository->update($request, $id);
-        $this->privilegeRepository->update($request, $admin);
+        $admin_id = $this->adminRepository->update($request, $id);
+        $this->privilegeRepository->update($request, $admin_id);
         return redirect()->route('admins.index');
     }
 
 
     public function destroy($id)
     {
-        $this->authorize('admin-delete-admin');
-        $this->adminRepository->destroy($id);
+        authorize_action('admin_delete', true);
         $this->privilegeRepository->destroy($id);
+        $this->adminRepository->destroy($id);
         return redirect()->route('admins.index');
     }
 }

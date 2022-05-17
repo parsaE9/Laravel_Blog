@@ -23,22 +23,23 @@
                 <li><a href="{{ URL::to('user_blogs') }}">View User Blogs</a></li>
                 <li><a href="{{ URL::to('user_blogs/create') }}">Create a Blog</a>
             @else
-                @if (Auth::user()->privileges->blog_list)
+                @if (authorize_action('blog_list'))
                     <li><a href="{{ URL::to('admin_blogs') }}">View All Blogs</a></li>
                 @endif
-                @if (Auth::user()->privileges->user_list)
+                @if (authorize_action('user_list'))
                     <li><a href="{{ URL::to('users') }}">View All Users</a></li>
                 @endif
-                @if (Auth::user()->privileges->user_create)
+                @if (authorize_action('user_create'))
                     <li><a href="{{ URL::to('users/create') }}">Create New User</a></li>
                 @endif
-                @if (Auth::user()->privileges->admin_list)
+                @if (authorize_action('admin_list'))
                     <li><a href="{{ URL::to('admins') }}">View All Admins</a></li>
                 @endif
-                @if (Auth::user()->privileges->admin_create)
+                @if (authorize_action('admin_create'))
                     <li><a href="{{ URL::to('admins/create') }}">Create New Admin</a></li>
                 @endif
             @endif
+
         </ul>
 
 

@@ -23,14 +23,14 @@
                 <td>{{ $value->short_description }}</td>
 
                 <td>
-                    @if (Auth::user()->privileges->blog_delete)
+                    @if (authorize_action('blog_delete'))
                         <form action="{{ route('admin_blogs.destroy', $value->id) }}" method="POST" class="pull-right">
                             <input type="hidden" name="_method" value="DELETE">
                             <input type="hidden" name="_token" value="{{ csrf_token() }}">
                             <button class="btn btn-warning ">Delete Blog</button>
                         </form>
                     @endif
-                    @if (Auth::user()->privileges->blog_edit)
+                    @if (authorize_action('blog_edit'))
                         <a class="btn btn-small btn-info" href="{{ URL::to('admin_blogs/' . $value->id . '/edit') }}">Edit
                             this Blog</a>
                     @endif

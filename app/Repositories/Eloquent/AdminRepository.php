@@ -36,7 +36,7 @@ class AdminRepository implements AdminRepositoryInterface
         $admin->password = bcrypt($validated['password']);
         $admin->save();
 
-        return $admin;
+        return $admin->id;
     }
 
 
@@ -53,15 +53,13 @@ class AdminRepository implements AdminRepositoryInterface
         }
 
         $admin->save();
-
-        return $admin;
+        return $admin->id;
     }
 
 
     public function destroy($id)
     {
         $admin = User::findOrFail($id);
-
         $admin->username = $admin->username . "_deleted_" . $admin->id;
         $admin->email = $admin->email . "_deleted_" . $admin->id;
         $admin->save();

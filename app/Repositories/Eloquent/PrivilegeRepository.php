@@ -9,122 +9,65 @@ use App\Repositories\PrivilegeRepositoryInterface;
 class PrivilegeRepository implements PrivilegeRepositoryInterface
 {
 
-    public function save($request, $admin)
+    public function save($request, $admin_id)
     {
-        $privilege = new Privilege();
-
         if ($request['user_list'] == 'on') {
-            $privilege->user_list = true;
+            Privilege::find(1)->users()->attach($admin_id);
         }
         if ($request['user_create'] == 'on') {
-            $privilege->user_create = true;
+            Privilege::find(2)->users()->attach($admin_id);
         }
         if ($request['user_edit'] == 'on') {
-            $privilege->user_edit = true;
+            Privilege::find(3)->users()->attach($admin_id);
         }
         if ($request['user_delete'] == 'on') {
-            $privilege->user_delete = true;
+            Privilege::find(4)->users()->attach($admin_id);
         }
 
 
         if ($request['admin_list'] == 'on') {
-            $privilege->admin_list = true;
+            Privilege::find(5)->users()->attach($admin_id);
         }
         if ($request['admin_create'] == 'on') {
-            $privilege->admin_create = true;
+            Privilege::find(6)->users()->attach($admin_id);
         }
         if ($request['admin_edit'] == 'on') {
-            $privilege->admin_edit = true;
+            Privilege::find(7)->users()->attach($admin_id);
         }
         if ($request['admin_delete'] == 'on') {
-            $privilege->admin_delete = true;
+            Privilege::find(8)->users()->attach($admin_id);
         }
 
 
         if ($request['blog_list'] == 'on') {
-            $privilege->blog_list = true;
+            Privilege::find(9)->users()->attach($admin_id);
         }
         if ($request['blog_edit'] == 'on') {
-            $privilege->blog_edit = true;
+            Privilege::find(10)->users()->attach($admin_id);
         }
         if ($request['blog_delete'] == 'on') {
-            $privilege->blog_delete = true;
+            Privilege::find(11)->users()->attach($admin_id);
         }
 
-        $privilege->user()->associate($admin)->save();
     }
 
 
-    public function update($request, $admin)
+    public function update($request, $admin_id)
     {
-        $privilege = Privilege::where('user_id', $admin->id)->first();
-
-        if ($request['user_list'] == 'on') {
-            $privilege->user_list = true;
-        } else {
-            $privilege->user_list = false;
-        }
-        if ($request['user_create'] == 'on') {
-            $privilege->user_create = true;
-        } else {
-            $privilege->user_create = false;
-        }
-        if ($request['user_edit'] == 'on') {
-            $privilege->user_edit = true;
-        } else {
-            $privilege->user_edit = false;
-        }
-        if ($request['user_delete'] == 'on') {
-            $privilege->user_delete = true;
-        } else {
-            $privilege->user_delete = false;
-        }
-
-
-        if ($request['admin_list'] == 'on') {
-            $privilege->admin_list = true;
-        } else {
-            $privilege->admin_list = false;
-        }
-        if ($request['admin_create'] == 'on') {
-            $privilege->admin_create = true;
-        } else {
-            $privilege->admin_create = false;
-        }
-        if ($request['admin_edit'] == 'on') {
-            $privilege->admin_edit = true;
-        } else {
-            $privilege->admin_edit = false;
-        }
-        if ($request['admin_delete'] == 'on') {
-            $privilege->admin_delete = true;
-        } else {
-            $privilege->admin_delete = false;
-        }
-
-
-        if ($request['blog_list'] == 'on') {
-            $privilege->blog_list = true;
-        } else {
-            $privilege->blog_list = false;
-        }
-        if ($request['blog_edit'] == 'on') {
-            $privilege->blog_edit = true;
-        } else {
-            $privilege->blog_edit = false;
-        }
-        if ($request['blog_delete'] == 'on') {
-            $privilege->blog_delete = true;
-        } else {
-            $privilege->blog_delete = false;
-        }
-
-        $privilege->save();
+        $this->destroy($admin_id);
+        $this->save($request, $admin_id);
     }
 
 
     public function destroy($id)
     {
-        Privilege::where('user_id', $id)->delete();
+        $privileges = Privilege::all();
+        foreach ($privileges as $privilege) {
+            foreach ($privilege->users as $user) {
+                if ($user->pivot->user_id == $id){
+                    $user->pivot->delete();
+                }
+            }
+        }
     }
 }
