@@ -6,24 +6,30 @@ use App\Models\User;
 use App\Repositories\UserRepositoryInterface;
 
 
-class UserRepository implements UserRepositoryInterface
+class UserRepository extends BaseRepository implements UserRepositoryInterface
 {
+
+    public function __construct(User $model)
+    {
+        parent::__construct($model);
+    }
+
 
     public function all()
     {
-        return User::where('privilege', '1')->paginate(4);
+        return $this->model->where('privilege', '1')->paginate(4);
     }
 
     public function find($id)
     {
-        return User::findOrFail($id);
+        return $this->model->findOrFail($id);
     }
 
     public function create($request)
     {
         $validated = $request->validated();
 
-        $user = new User();
+        $user = $this->model->newInstance();
         $user->username = $validated['username'];
         $user->email = $validated['email'];
         $user->privilege = '1';
@@ -36,7 +42,7 @@ class UserRepository implements UserRepositoryInterface
     {
         $validated = $request->validated();
 
-        $user = User::findOrFail($id);
+        $user = $this->model->findOrFail($id);
         $user->username = $validated['username'];
         $user->email = $validated['email'];
 
@@ -50,7 +56,7 @@ class UserRepository implements UserRepositoryInterface
 
     public function destroy($id)
     {
-        $user = User::findOrFail($id);
+        $user = $this->model->findOrFail($id);
         $user_blogs_IDs = $user->blogs()->pluck('id')->all();
 
         $user->username = $user->username . "_deleted_" . $user->id;

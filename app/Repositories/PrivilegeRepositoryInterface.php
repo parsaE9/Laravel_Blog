@@ -6,8 +6,4 @@ namespace App\Repositories;
 interface PrivilegeRepositoryInterface
 {
     public function create($request, $admin_id);
-
-    public function update($request, $admin_id);
-
-    public function destroy($id);
 }

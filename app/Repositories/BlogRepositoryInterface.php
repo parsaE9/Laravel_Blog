@@ -12,8 +12,4 @@ interface BlogRepositoryInterface
     public function find($id);
 
     public function create($request);
-
-    public function update($request, $id);
-
-    public function destroy($id);
 }

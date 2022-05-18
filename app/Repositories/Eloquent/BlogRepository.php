@@ -8,23 +8,30 @@ use App\Repositories\BlogRepositoryInterface;
 use Illuminate\Support\Facades\Auth;
 
 
-class BlogRepository implements BlogRepositoryInterface
+class BlogRepository extends BaseRepository implements BlogRepositoryInterface
 {
+
+    public function __construct(Blog $model)
+    {
+        parent::__construct($model);
+    }
+
+
     public function all()
     {
-        return Blog::paginate(2);
+        return $this->model->paginate(2);
     }
 
 
     public function user_blogs()
     {
-        return Blog::where('user_id', Auth::id())->paginate(2);
+        return $this->model->where('user_id', Auth::id())->paginate(2);
     }
 
 
     public function find($id)
     {
-        return Blog::findOrFail($id);
+        return $this->model->findOrFail($id);
     }
 
 
@@ -32,7 +39,7 @@ class BlogRepository implements BlogRepositoryInterface
     {
         $validated = $request->validated();
 
-        $blog = new Blog();
+        $blog = $this->model->newInstance();
         $blog->title = $validated['title'];
         $blog->short_description = $validated['short_description'];
         $blog->long_description = $validated['long_description'];
@@ -48,7 +55,7 @@ class BlogRepository implements BlogRepositoryInterface
     {
         $validated = $request->validated();
 
-        $blog = Blog::findOrFail($id);
+        $blog = $this->model->findOrFail($id);
 
         $blog->title = $validated['title'];
         $blog->short_description = $validated['short_description'];
@@ -62,7 +69,7 @@ class BlogRepository implements BlogRepositoryInterface
 
     public function destroy($id)
     {
-        $blog = Blog::findOrFail($id);
+        $blog = $this->model->findOrFail($id);
         $blog->title = $blog->title . "_deleted_" . $blog->id;
         $blog->save();
         $blog->delete();

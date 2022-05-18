@@ -7,12 +7,18 @@ use App\Repositories\AdminRepositoryInterface;
 use Illuminate\Support\Facades\Auth;
 
 
-class AdminRepository implements AdminRepositoryInterface
+class AdminRepository extends BaseRepository implements AdminRepositoryInterface
 {
+
+    public function __construct(User $model)
+    {
+        parent::__construct($model);
+    }
+
 
     public function all()
     {
-        return User::where([
+        return $this->model->where([
             ['id', '!=', Auth::user()->id],
             ['privilege', '2']
         ])->paginate(4);
@@ -21,7 +27,7 @@ class AdminRepository implements AdminRepositoryInterface
 
     public function find($id)
     {
-        return User::findOrFail($id);
+        return $this->model->findOrFail($id);
     }
 
 
@@ -29,7 +35,7 @@ class AdminRepository implements AdminRepositoryInterface
     {
         $validated = $request->validated();
 
-        $admin = new User();
+        $admin = $this->model->newInstance();
         $admin->username = $validated['username'];
         $admin->email = $validated['email'];
         $admin->privilege = '2';
@@ -44,7 +50,7 @@ class AdminRepository implements AdminRepositoryInterface
     {
         $validated = $request->validated();
 
-        $admin = User::findOrFail($id);
+        $admin = $this->model->findOrFail($id);
         $admin->username = $validated['username'];
         $admin->email = $validated['email'];
 
@@ -59,7 +65,7 @@ class AdminRepository implements AdminRepositoryInterface
 
     public function destroy($id)
     {
-        $admin = User::findOrFail($id);
+        $admin = $this->model->findOrFail($id);
         $admin->username = $admin->username . "_deleted_" . $admin->id;
         $admin->email = $admin->email . "_deleted_" . $admin->id;
         $admin->save();
