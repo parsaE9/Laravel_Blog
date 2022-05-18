@@ -39,9 +39,7 @@ class AdminController extends Controller
 
     public function store(CreateAdminValidation $request)
     {
-        $admin_id = $this->adminRepository->create($request);
-        $data = [$request, $admin_id];
-        $this->privilegeRepository->create($data);
+        store_admin($request, $this->adminRepository, $this->privilegeRepository);
         return redirect()->route('admins.index');
     }
 
@@ -56,8 +54,7 @@ class AdminController extends Controller
 
     public function update(UpdateAdminValidation $request, $id)
     {
-        $admin_id = $this->adminRepository->update($request, $id);
-        $this->privilegeRepository->update($request, $admin_id);
+        update_admin($request, $id, $this->adminRepository, $this->privilegeRepository);
         return redirect()->route('admins.index');
     }
 
@@ -65,8 +62,7 @@ class AdminController extends Controller
     public function destroy($id)
     {
         authorize_action('admin_delete', true);
-        $this->privilegeRepository->destroy($id);
-        $this->adminRepository->destroy($id);
+        destroy_admin($id, $this->adminRepository, $this->privilegeRepository);
         return redirect()->route('admins.index');
     }
 }

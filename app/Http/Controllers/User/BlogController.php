@@ -38,9 +38,7 @@ class BlogController extends Controller
 
     public function store(CreateBlogValidation $request)
     {
-        $blog = $this->blogRepository->create($request);
-        $data = [$request, $blog];
-        $this->photoRepository->create($data);
+        store_blog($request, $this->blogRepository, $this->photoRepository);
         return redirect()->route('user_blogs.index');
     }
 
@@ -63,16 +61,14 @@ class BlogController extends Controller
 
     public function update(UpdateBlogValidation $request, $id)
     {
-        $blog = $this->blogRepository->update($request, $id);
-        $this->photoRepository->update($request, $blog);
+        update_blog($request, $id, $this->blogRepository, $this->photoRepository);
         return redirect()->route('user_blogs.index');
     }
 
 
     public function destroy($id)
     {
-        $this->photoRepository->destroy($id);
-        $this->blogRepository->destroy($id);
+        destroy_blog($id, $this->blogRepository, $this->photoRepository);
         return redirect()->route('user_blogs.index');
     }
 

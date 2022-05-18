@@ -40,8 +40,7 @@ class BlogController extends Controller
 
     public function update(UpdateBlogValidation $request, $id)
     {
-        $blog = $this->blogRepository->update($request, $id);
-        $this->photoRepository->update($request, $blog);
+        update_blog($request, $id, $this->blogRepository, $this->photoRepository);
         return redirect()->route('admin_blogs.index');
     }
 
@@ -49,8 +48,7 @@ class BlogController extends Controller
     public function destroy($id)
     {
         authorize_action('blog_delete', true);
-        $this->photoRepository->destroy($id);
-        $this->blogRepository->destroy($id);
+        destroy_blog($id, $this->blogRepository, $this->photoRepository);
         return redirect()->route('admin_blogs.index');
     }
 

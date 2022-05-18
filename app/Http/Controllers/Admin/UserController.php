@@ -65,13 +65,7 @@ class UserController extends Controller
     public function destroy($id)
     {
         authorize_action('user_delete', true);
-
-        $user_blogs_IDs = $this->userRepository->destroy($id);
-        foreach ($user_blogs_IDs as $user_blog_ID){
-            $this->photoRepository->destroy($user_blog_ID);
-            $this->blogRepository->destroy($user_blog_ID);
-        }
-
+        destroy_user($id, $this->userRepository, $this->blogRepository, $this->photoRepository);
         return redirect()->route('users.index');
     }
 }
