@@ -25,7 +25,7 @@ class AdminRepository implements AdminRepositoryInterface
     }
 
 
-    public function save($request)
+    public function create($request)
     {
         $validated = $request->validated();
 

@@ -19,7 +19,7 @@ class UserRepository implements UserRepositoryInterface
         return User::findOrFail($id);
     }
 
-    public function save($request)
+    public function create($request)
     {
         $validated = $request->validated();
 

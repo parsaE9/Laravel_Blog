@@ -28,7 +28,7 @@ class BlogRepository implements BlogRepositoryInterface
     }
 
 
-    public function save($request)
+    public function create($request)
     {
         $validated = $request->validated();
 

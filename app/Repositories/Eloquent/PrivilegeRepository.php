@@ -9,7 +9,7 @@ use App\Repositories\PrivilegeRepositoryInterface;
 class PrivilegeRepository implements PrivilegeRepositoryInterface
 {
 
-    public function save($request, $admin_id)
+    public function create($request, $admin_id)
     {
         if ($request['user_list'] == 'on') {
             Privilege::find(1)->users()->attach($admin_id);

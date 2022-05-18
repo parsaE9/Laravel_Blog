@@ -9,7 +9,7 @@ interface UserRepositoryInterface
 
     public function find($id);
 
-    public function save($request);
+    public function create($request);
 
     public function update($request, $id);
 

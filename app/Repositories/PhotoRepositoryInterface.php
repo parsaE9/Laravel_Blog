@@ -4,7 +4,7 @@ namespace App\Repositories;
 
 interface PhotoRepositoryInterface
 {
-    public function save($request, $blog);
+    public function create($request, $blog);
 
     public function update($request, $blog);
 

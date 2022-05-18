@@ -38,8 +38,8 @@ class BlogController extends Controller
 
     public function store(CreateBlogValidation $request)
     {
-        $blog = $this->blogRepository->save($request);
-        $this->photoRepository->save($request, $blog);
+        $blog = $this->blogRepository->create($request);
+        $this->photoRepository->create($request, $blog);
         return redirect()->route('user_blogs.index');
     }
 

@@ -42,7 +42,7 @@ class UserController extends Controller
 
     public function store(CreateUserValidation $request)
     {
-        $this->userRepository->save($request);
+        $this->userRepository->create($request);
         return redirect()->route('users.index');
     }
 

@@ -10,7 +10,7 @@ use Illuminate\Support\Facades\File;
 
 class PhotoRepository implements PhotoRepositoryInterface
 {
-    public function save($request, $blog)
+    public function create($request, $blog)
     {
         foreach ($request->file('images') as $image) {
             $image_name = $image->getClientOriginalName();
