@@ -15,8 +15,11 @@ class PrivilegeRepository extends BaseRepository implements PrivilegeRepositoryI
     }
 
 
-    public function create($request, $admin_id)
+    public function create($data)
     {
+        $request = $data[0];
+        $admin_id = $data[1];
+
         if ($request['user_list'] == 'on') {
             $this->model->find(1)->users()->attach($admin_id);
         }
@@ -59,8 +62,9 @@ class PrivilegeRepository extends BaseRepository implements PrivilegeRepositoryI
 
     public function update($request, $admin_id)
     {
+        $data = [$request, $admin_id];
         $this->destroy($admin_id);
-        $this->create($request, $admin_id);
+        $this->create($data);
     }
 
 

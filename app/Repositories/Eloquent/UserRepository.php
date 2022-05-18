@@ -20,21 +20,10 @@ class UserRepository extends BaseRepository implements UserRepositoryInterface
         return $this->model->where('privilege', '1')->paginate(4);
     }
 
+
     public function find($id)
     {
         return $this->model->findOrFail($id);
-    }
-
-    public function create($request)
-    {
-        $validated = $request->validated();
-
-        $user = $this->model->newInstance();
-        $user->username = $validated['username'];
-        $user->email = $validated['email'];
-        $user->privilege = '1';
-        $user->password = bcrypt($validated['password']);
-        $user->save();
     }
 
 

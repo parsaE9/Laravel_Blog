@@ -10,6 +10,4 @@ interface BlogRepositoryInterface
     public function user_blogs();
 
     public function find($id);
-
-    public function create($request);
 }

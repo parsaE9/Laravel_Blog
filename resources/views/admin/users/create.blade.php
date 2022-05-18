@@ -35,6 +35,10 @@
             </label>
         </div>
 
+        <label>
+            <input name="privilege" type="checkbox" value="1" checked hidden>
+        </label>
+
         <input type="submit" id="submit" class="btn btn-primary" value="Create The User!">
 
     </form>

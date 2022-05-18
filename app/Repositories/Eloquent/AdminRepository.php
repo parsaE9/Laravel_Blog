@@ -31,21 +31,6 @@ class AdminRepository extends BaseRepository implements AdminRepositoryInterface
     }
 
 
-    public function create($request)
-    {
-        $validated = $request->validated();
-
-        $admin = $this->model->newInstance();
-        $admin->username = $validated['username'];
-        $admin->email = $validated['email'];
-        $admin->privilege = '2';
-        $admin->password = bcrypt($validated['password']);
-        $admin->save();
-
-        return $admin->id;
-    }
-
-
     public function update($request, $id)
     {
         $validated = $request->validated();

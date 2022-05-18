@@ -5,7 +5,7 @@ namespace App\Repositories;
 
 interface EloquentRepositoryInterface
 {
-//    public function create($request);
+    public function create($data);
 
     public function update($request, $param);
 

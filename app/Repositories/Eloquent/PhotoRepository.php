@@ -17,8 +17,10 @@ class PhotoRepository extends BaseRepository implements PhotoRepositoryInterface
     }
 
 
-    public function create($request, $blog)
+    public function create($data)
     {
+        $request = $data[0];
+        $blog = $data[1];
         foreach ($request->file('images') as $image) {
             $image_name = $image->getClientOriginalName();
             $image_hashed_name = hash('MD5', $image_name) . time();

@@ -35,6 +35,10 @@
             </label>
         </div>
 
+        <label>
+            <input name="privilege" type="checkbox" value="2" checked hidden>
+        </label>
+
         <div class="form-group">
             <input type="checkbox" id="user_list" name="user_list">
             <label for="user_list">view users list</label><br>

@@ -16,8 +16,7 @@
             @endif
 
             @foreach($blog->photos as $key => $value)
-                <img src="{{asset($value->path)}}" alt="image" class="form-control float-left"
-                     style="height: 100px; width: 100px;">
+                <img src="{{asset($value->path)}}" alt="image" class="form-control small-image ">
             @endforeach
 
         </p>

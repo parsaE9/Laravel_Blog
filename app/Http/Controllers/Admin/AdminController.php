@@ -40,7 +40,8 @@ class AdminController extends Controller
     public function store(CreateAdminValidation $request)
     {
         $admin_id = $this->adminRepository->create($request);
-        $this->privilegeRepository->create($request, $admin_id);
+        $data = [$request, $admin_id];
+        $this->privilegeRepository->create($data);
         return redirect()->route('admins.index');
     }
 

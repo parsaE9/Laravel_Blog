@@ -26,6 +26,7 @@ class CreateUserValidation extends FormRequest
         return [
             'username' => 'required|unique:users',
             'email' => 'required|unique:users',
+            'privilege' => 'required',
             'password' => 'required',
         ];
     }
