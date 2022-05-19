@@ -35,7 +35,18 @@ class BaseRepository implements EloquentRepositoryInterface
 
     public function update($request, $param)
     {
-        $this->model->find($param)->update($request);
+        $validated = $request->validated();
+
+        $model = $this->model->findOrFail($param);
+        $model->username = $validated['username'];
+        $model->email = $validated['email'];
+
+        if ($validated['password'] != $model->password) {
+            $model->password = bcrypt($validated['password']);
+        }
+
+        $model->save();
+        return $model->id;
     }
 
 

@@ -27,22 +27,6 @@ class UserRepository extends BaseRepository implements UserRepositoryInterface
     }
 
 
-    public function update($request, $id)
-    {
-        $validated = $request->validated();
-
-        $user = $this->model->findOrFail($id);
-        $user->username = $validated['username'];
-        $user->email = $validated['email'];
-
-        if ($validated['password'] != $user->password) {
-            $user->password = bcrypt($validated['password']);
-        }
-
-        $user->save();
-    }
-
-
     public function destroy($id)
     {
         $user = $this->model->findOrFail($id);
