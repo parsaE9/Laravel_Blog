@@ -18,6 +18,7 @@ class UserSeeder extends Seeder
         DB::table('users')->updateOrInsert(
             ['username' => 'reza', 'email' => 'reza@gmail.com'],
             [
+                'id' => '1',
                 'username' => 'reza',
                 'privilege' => '1',
                 'email' => 'reza@gmail.com',
@@ -29,6 +30,7 @@ class UserSeeder extends Seeder
         DB::table('users')->updateOrInsert(
             ['username' => 'ali', 'email' => 'ali@gmail.com'],
             [
+                'id' => '2',
                 'username' => 'ali',
                 'privilege' => '1',
                 'email' => 'ali@gmail.com',
@@ -42,6 +44,7 @@ class UserSeeder extends Seeder
         DB::table('users')->updateOrInsert(
             ['username' => 'parsa', 'email' => 'parsa@gmail.com'],
             [
+                'id' => '3',
                 'username' => 'parsa',
                 'privilege' => '2',
                 'email' => 'parsa@gmail.com',

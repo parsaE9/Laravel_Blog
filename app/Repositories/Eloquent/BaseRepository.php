@@ -29,7 +29,7 @@ class BaseRepository implements EloquentRepositoryInterface
         ]);
 
         $model->save();
-        return $model->id;
+        return $model;
     }
 
 
@@ -46,7 +46,7 @@ class BaseRepository implements EloquentRepositoryInterface
         }
 
         $model->save();
-        return $model->id;
+        return $model;
     }
 
 

@@ -25,16 +25,16 @@ function destroy_blog($id, $blogRepository, $photoRepository)
 
 function store_admin($request, $adminRepository, $privilegeRepository)
 {
-    $admin_id = $adminRepository->create($request);
-    $data = [$request, $admin_id];
+    $admin = $adminRepository->create($request);
+    $data = [$request, $admin];
     $privilegeRepository->create($data);
 }
 
 
 function update_admin($request, $id, $adminRepository, $privilegeRepository)
 {
-    $admin_id = $adminRepository->update($request, $id);
-    $privilegeRepository->update($request, $admin_id);
+    $admin = $adminRepository->update($request, $id);
+    $privilegeRepository->update($request, $admin);
 }
 
 

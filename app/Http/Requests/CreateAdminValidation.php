@@ -28,9 +28,6 @@ class CreateAdminValidation extends FormRequest
             'email' => 'required|unique:users',
             'privilege' => 'required',
             'password' => 'required',
-            'user_list' => 'required_with:user_create|required_with:user_edit|required_with:user_delete',
-            'admin_list' => 'required_with:admin_create|required_with:admin_edit|required_with:admin_delete',
-            'blog_list' => 'required_with:blog_edit|required_with:blog_delete',
         ];
     }
 }

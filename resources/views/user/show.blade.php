@@ -5,21 +5,22 @@
 
     <div class="jumbotron">
         <h2>Title: {{ $blog->title }}</h2><br>
-        <p>
-            <strong>Short Description:</strong> {{ $blog->short_description }}<br><br>
-            <strong>Long Description:</strong> {{ $blog->long_description }}<br><br><br>
+        <div>
+            <strong>Short Description:</strong> {{ $blog->short_description }}<br>
+            <strong>Long Description:</strong> {{ $blog->long_description }}<br>
 
             @if ($blog->status == '1')
-                <strong>Status:</strong> Active <br><br><br>
+                <strong>Status:</strong> Active <br><br>
             @else
-                <strong>Status:</strong> Inactive <br><br><br>
+                <strong>Status:</strong> Inactive <br><br>
             @endif
 
             @foreach($blog->photos as $key => $value)
-                <img src="{{asset($value->path)}}" alt="image" class="form-control small-image ">
+                <div class="small-image" style="background-image: url({{asset($value->path)}});"></div>
+                <br>
             @endforeach
 
-        </p>
+        </div>
     </div>
 
 @endsection

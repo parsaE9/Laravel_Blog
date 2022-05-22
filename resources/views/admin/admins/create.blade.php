@@ -40,29 +40,29 @@
         </label>
 
         <div class="form-group">
-            <input type="checkbox" id="user_list" name="user_list">
+            <input type="checkbox" id="user_list" value='1' name="access[]">
             <label for="user_list">view users list</label><br>
-            <input type="checkbox" id="user_create" name="user_create">
+            <input type="checkbox" id="user_create" value='2' name="access[]">
             <label for="user_create">create user</label><br>
-            <input type="checkbox" id="user_edit" name="user_edit">
+            <input type="checkbox" id="user_edit" value='3' name="access[]">
             <label for="user_edit">edit user</label><br>
-            <input type="checkbox" id="user_delete" name="user_delete">
+            <input type="checkbox" id="user_delete" value='4' name="access[]">
             <label for="user_delete">delete user</label><br>
             <br>
-            <input type="checkbox" id="admin_list" name="admin_list">
+            <input type="checkbox" id="admin_list" value='5' name="access[]">
             <label for="admin_list">view admins list</label><br>
-            <input type="checkbox" id="admin_create" name="admin_create">
+            <input type="checkbox" id="admin_create" value='6' name="access[]">
             <label for="admin_create">create admin</label><br>
-            <input type="checkbox" id="admin_edit" name="admin_edit">
+            <input type="checkbox" id="admin_edit" value='7' name="access[]">
             <label for="admin_edit">edit admin</label><br>
-            <input type="checkbox" id="admin_delete" name="admin_delete">
+            <input type="checkbox" id="admin_delete" value='8' name="access[]">
             <label for="admin_delete">delete admin</label><br>
             <br>
-            <input type="checkbox" id="blog_list" name="blog_list">
+            <input type="checkbox" id="blog_list" value='9' name="access[]">
             <label for="blog_list">view blogs list</label><br>
-            <input type="checkbox" id="blog_edit" name="blog_edit">
+            <input type="checkbox" id="blog_edit" value='10' name="access[]">
             <label for="blog_edit">edit blog</label><br>
-            <input type="checkbox" id="blog_delete" name="blog_delete">
+            <input type="checkbox" id="blog_delete" value='11' name="access[]">
             <label for="blog_delete">delete blog</label><br>
 
         </div>

@@ -56,9 +56,8 @@
         @foreach($blog->photos as $key => $value)
 
             <div class="form-group hdtuto">
-                <label>
-                    <img src="{{asset($value->path)}}" alt="image" class="form-control small-image ">
-                </label>
+                <div class="form small-image" style="background-image: url({{asset($value->path)}});"></div>
+                <br>
                 <button class="btn btn-danger float-right" id="remove" type="button">Remove</button>
                 <label>
                     <input name="previous_images[]" type="checkbox" value="{{$value->path}}" checked hidden>

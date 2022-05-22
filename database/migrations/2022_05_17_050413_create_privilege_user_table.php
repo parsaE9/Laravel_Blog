@@ -18,6 +18,7 @@ class CreatePrivilegeUserTable extends Migration
             $table->unsignedBigInteger('privilege_id');
             $table->unsignedBigInteger('user_id');
             $table->timestamps();
+            $table->softDeletes();
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
             $table->foreign('privilege_id')->references('id')->on('privileges')->onDelete('cascade');
         });

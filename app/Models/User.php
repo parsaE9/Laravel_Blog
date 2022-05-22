@@ -43,7 +43,7 @@ class User extends Authenticatable
     }
 
     public function privileges(){
-        return $this->belongsToMany('App\Models\Privilege');
+        return $this->belongsToMany('App\Models\Privilege')->withTimestamps();
     }
 
 }
