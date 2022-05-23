@@ -16,6 +16,12 @@ class PrivilegeRepository extends BaseRepository implements PrivilegeRepositoryI
     }
 
 
+    public function all()
+    {
+        return $this->model->all();
+    }
+
+
     public function create($data)
     {
         $request = $data[0];

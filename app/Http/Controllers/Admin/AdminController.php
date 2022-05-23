@@ -33,7 +33,8 @@ class AdminController extends Controller
     public function create()
     {
         authorize_action('admin_create', true);
-        return view('admin.admins.create');
+        $privileges = $this->privilegeRepository->all();
+        return view('admin.admins.create')->with('privileges', $privileges);
     }
 
 
@@ -48,7 +49,8 @@ class AdminController extends Controller
     {
         authorize_action('admin_edit', true);
         $admin = $this->adminRepository->find($id);
-        return view('admin.admins.edit')->with('admin', $admin);
+        $privileges = $this->privilegeRepository->all();
+        return view('admin.admins.edit')->with('admin', $admin)->with('privileges', $privileges);
     }
 
 
