@@ -4,7 +4,7 @@
 function store_blog($request, $blogRepository, $photoRepository)
 {
     $blog = $blogRepository->create($request);
-    $data = [$request, $blog];
+    $data = ['request' => $request, 'blog' => $blog];
     $photoRepository->create($data);
 }
 
@@ -26,7 +26,7 @@ function destroy_blog($id, $blogRepository, $photoRepository)
 function store_admin($request, $adminRepository, $privilegeRepository)
 {
     $admin = $adminRepository->create($request);
-    $data = [$request, $admin];
+    $data = ['request' => $request, 'admin' => $admin];
     $privilegeRepository->create($data);
 }
 

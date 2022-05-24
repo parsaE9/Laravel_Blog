@@ -42,7 +42,7 @@
 
         <div class="form-group">
             @foreach($privileges as $privilege)
-                <input type="checkbox" id="{{ $privilege->name }}" value="{{ $privilege->id }}" name="access[]" {{ edit_admin($privilege->name, $admin->id) ? 'checked' : '' }}>
+                <input type="checkbox" id="{{ $privilege->name }}" value="{{ $privilege->id }}" name="access[]" {{ admin_has_access($privilege->name, $admin->id) ? 'checked' : '' }}>
                 <label for="{{ $privilege->name }}">{{ $privilege->name }}</label><br>
             @endforeach
         </div>

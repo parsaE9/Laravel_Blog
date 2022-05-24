@@ -24,8 +24,8 @@ class PrivilegeRepository extends BaseRepository implements PrivilegeRepositoryI
 
     public function create($data)
     {
-        $request = $data[0];
-        $admin = $data[1];
+        $request = $data['request'];
+        $admin = $data['admin'];
         $admin->privileges()->attach($request['access']);
     }
 

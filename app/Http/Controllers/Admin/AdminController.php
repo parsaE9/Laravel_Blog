@@ -47,7 +47,7 @@ class AdminController extends Controller
 
     public function edit($id)
     {
-        authorize_action('admin_edit', true);
+        authorize_admin_or_user_edit('admin_edit', $id);
         $admin = $this->adminRepository->find($id);
         $privileges = $this->privilegeRepository->all();
         return view('admin.admins.edit')->with('admin', $admin)->with('privileges', $privileges);

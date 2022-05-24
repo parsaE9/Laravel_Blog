@@ -49,7 +49,7 @@ class UserController extends Controller
 
     public function edit($id)
     {
-        authorize_action('user_edit', true);
+        authorize_admin_or_user_edit('user_edit', $id);
         $user = $this->userRepository->find($id);
         return view('admin.users.edit')->with('user', $user);
     }
