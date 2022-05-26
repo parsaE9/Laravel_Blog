@@ -5,20 +5,20 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\UpdateBlogValidation;
 use App\Repositories\BlogRepositoryInterface;
-use App\Repositories\PhotoRepositoryInterface;
+use App\Services\BlogServices;
 
 
 class BlogController extends Controller
 {
 
     private $blogRepository;
-    private $photoRepository;
+    private $blogServices;
 
 
-    public function __construct(BlogRepositoryInterface $blogRepository, PhotoRepositoryInterface $photoRepository)
+    public function __construct(BlogRepositoryInterface $blogRepository, BlogServices $blogServices)
     {
         $this->blogRepository = $blogRepository;
-        $this->photoRepository = $photoRepository;
+        $this->blogServices = $blogServices;
     }
 
 
@@ -40,7 +40,7 @@ class BlogController extends Controller
 
     public function update(UpdateBlogValidation $request, $id)
     {
-        update_blog($request, $id, $this->blogRepository, $this->photoRepository);
+        $this->blogServices->update($request, $id);
         return redirect()->route('admin_blogs.index');
     }
 
@@ -48,7 +48,7 @@ class BlogController extends Controller
     public function destroy($id)
     {
         authorize_action('blog_delete', true);
-        destroy_blog($id, $this->blogRepository, $this->photoRepository);
+        $this->blogServices->delete($id);
         return redirect()->route('admin_blogs.index');
     }
 

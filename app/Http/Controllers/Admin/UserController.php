@@ -5,25 +5,23 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\CreateUserValidation;
 use App\Http\Requests\UpdateUserValidation;
-use App\Repositories\BlogRepositoryInterface;
-use App\Repositories\PhotoRepositoryInterface;
 use App\Repositories\UserRepositoryInterface;
+use App\Services\UserServices;
 
 
 class UserController extends Controller
 {
 
     private $userRepository;
-    private $blogRepository;
-    private $photoRepository;
+    private $userServices;
 
 
-    public function __construct(UserRepositoryInterface $userRepository, BlogRepositoryInterface $blogRepository, PhotoRepositoryInterface $photoRepository)
+    public function __construct(UserRepositoryInterface $userRepository, UserServices $userServices)
     {
         $this->userRepository = $userRepository;
-        $this->blogRepository = $blogRepository;
-        $this->photoRepository = $photoRepository;
+        $this->userServices = $userServices;
     }
+
 
     public function index()
     {
@@ -65,7 +63,7 @@ class UserController extends Controller
     public function destroy($id)
     {
         authorize_action('user_delete', true);
-        destroy_user($id, $this->userRepository, $this->blogRepository, $this->photoRepository);
+        $this->userServices->delete($id);
         return redirect()->route('users.index');
     }
 }

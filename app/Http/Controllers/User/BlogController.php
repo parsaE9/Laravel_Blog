@@ -6,20 +6,21 @@ use App\Http\Controllers\Controller;
 use App\Http\Requests\CreateBlogValidation;
 use App\Http\Requests\UpdateBlogValidation;
 use App\Repositories\BlogRepositoryInterface;
-use App\Repositories\PhotoRepositoryInterface;
+use App\Services\BlogServices;
 use Illuminate\Support\Facades\Gate;
+
 
 class BlogController extends Controller
 {
 
     private $blogRepository;
-    private $photoRepository;
+    private $blogServices;
 
 
-    public function __construct(BlogRepositoryInterface $blogRepository, PhotoRepositoryInterface $photoRepository)
+    public function __construct(BlogRepositoryInterface $blogRepository, BlogServices $blogServices)
     {
         $this->blogRepository = $blogRepository;
-        $this->photoRepository = $photoRepository;
+        $this->blogServices = $blogServices;
     }
 
 
@@ -38,7 +39,7 @@ class BlogController extends Controller
 
     public function store(CreateBlogValidation $request)
     {
-        store_blog($request, $this->blogRepository, $this->photoRepository);
+        $this->blogServices->create($request);
         return redirect()->route('user_blogs.index');
     }
 
@@ -61,14 +62,14 @@ class BlogController extends Controller
 
     public function update(UpdateBlogValidation $request, $id)
     {
-        update_blog($request, $id, $this->blogRepository, $this->photoRepository);
+        $this->blogServices->update($request, $id);
         return redirect()->route('user_blogs.index');
     }
 
 
     public function destroy($id)
     {
-        destroy_blog($id, $this->blogRepository, $this->photoRepository);
+        $this->blogServices->delete($id);
         return redirect()->route('user_blogs.index');
     }
 
