@@ -8,7 +8,6 @@ use Illuminate\Support\Facades\File;
 use Illuminate\Support\Str;
 
 
-
 class PhotoRepository extends BaseRepository implements PhotoRepositoryInterface
 {
 
@@ -34,20 +33,13 @@ class PhotoRepository extends BaseRepository implements PhotoRepositoryInterface
     }
 
 
-    public function update($request, $blog)
+    public function update($request, $data)
     {
-        if ($request->has('previous_images')) {
-            foreach ($blog->photos as $key => $value) {
-                if (!in_array($value->path, $request->get('previous_images'))) {
-                    File::delete(public_path($value->path));
-                    $this->model->where('path', $value->path)->delete();
-                }
-            }
-        } else {
-            foreach ($blog->photos as $key => $value) {
-                File::delete(public_path($value->path));
-                $this->model->where('path', $value->path)->delete();
-            }
+        $blog = $data['blog'];
+        $deleted_images = $data['deleted_images'];
+
+        foreach ($deleted_images as $deleted_image_path) {
+            $this->model->where('path', $deleted_image_path)->delete();
         }
 
         if ($request->hasfile('images')) {
